@@ -1,0 +1,131 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.w-95, .w-md-75, .w-lg-60, .w-xl-55 {
+    max-width: 95%;
+}
+
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-6 {
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.alt-font {
+    font-style: italic;
+}
+
+.text-primary {
+    color: #505050;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.schedule-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
+
+thead {
+    background: rgb(255, 195, 66);
+    color: white;
+}
+button{
+    background-color: rgb(255, 195, 66);
+    color: #505050;
+    border-radius: 4px;
+    border-color: #505050;
+}
+
+button1{
+    background-color: white;
+    color: #505050;
+    border-radius: 4px;
+    border-color: #505050;
+}
+
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(255, 195, 66);
+}
+
+th.last {
+    text-align: right;
+}
+
+.day {
+    font-weight: bold;
+    text-align: left;
+}
+
+.active {
+    background: rgb(255, 195, 66);
+}
+
+h4 {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.hover {
+    display: none;
+}
+
+td.active:hover .hover {
+    display: block;
+    position: absolute;
+    background: rgb(255, 195, 66);
+    color: white;
+    padding: 10px;
+    z-index: 1;
+}
+
+#taskModal{
+    margin-right: 300px;
+    margin-left: 400px;
+    margin-top: 100px;
+    margin-bottom: 500px;
+}

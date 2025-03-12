@@ -1,0 +1,751 @@
+* {
+    padding: 0;
+    max-width: 1200;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Lato" , sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ffffff;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+
+header {
+    background-color: #ffffff;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(51, 51, 51);
+    z-index: 1;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1550px;
+    margin-right: 90px;
+}
+
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar */ 
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.navbar ul li a:hover {
+    background-color: rgb(255, 195, 66);
+    color: #505050;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* Profile Section */
+.profile {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background-color: rgb(255, 195, 66);
+    color: #505050;
+    font-weight: 800;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.profile-btn:hover {
+    background-color: #505050;
+    color: #ffffff;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+    margin-right: 100px;
+    margin-top: 150px;
+}
+
+
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 10px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide the navigation */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navbar ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar ul.show-nav {
+        display: flex; /* Show menu when activated */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.hero {
+    margin-top: 50px;
+    display: flex;
+    height: 800px;
+    justify-content: space-between;
+    align-items: center;
+}
+.homepage-image{
+    margin-left: 30px;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right:70px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.hero-element-welcome ,.hero-elements,.hero-element {
+    color: #505050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.hero-element-welcome{
+    font-size: 30px;
+    font-family: 'Handlee',cursive;
+    letter-spacing: 4px;
+}
+.hero-element-welcome h1{
+    font-size: 20px;
+    margin-bottom: 0px;
+
+}
+.hero-elements{
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    font-family: 'Handlee',cursive;
+}
+
+.hero-element a{
+    color: #505050;
+    font-family: 'Handlee',cursive;
+    transition: background-color 0.3s ease;
+
+}
+
+.hero-element a:hover {
+    transform: scale(2);
+    color: #505050;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Adjust height dynamically */
+        align-items: center;
+        text-align: center;
+        margin-top: 200px;
+    }
+
+    .homepage-image {
+        margin-left: 0px;
+        width: 80%; /* Adjust image width */
+        max-width: 300px; /* Set max width */
+    }
+
+    .hero-content {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .hero-element-welcome {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .hero-element-welcome h1 {
+        font-size: 16px;
+    }
+
+    .hero-elements {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .hero-element a {
+        font-size: 16px;
+    }
+
+    .hero-element a:hover {
+        transform: scale(1.2);
+    }
+}
+
+
+/* Image Section */
+.image-section {
+    padding: 20px 0;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Articles Section */
+.articles-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.article-graphic {
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.article-content {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.article-content h3 {
+    margin-top: 0;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66);
+}
+
+.article-content p {
+    font-size:20px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.more-text {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.read-more-link {
+    color: #1e2e3f;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.read-more-link:hover {
+    color: #1a1d20;
+}
+/* General Styling */
+.Recommend {
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Section Headers */
+.mental-health-header,
+.self-care-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mental-health-header h2,
+.self-care-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.see-all-link {
+    font-size: 16px;
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.see-all-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Card Carousel */
+.card-carousel {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.card-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+/* Hide scrollbar */
+.card-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Health Cards */
+.health-card {
+    flex: 0 0 auto;
+    width: 75px; /* Set width to 75px */
+    height: 75px; /* Set height to 75px */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.health-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside cards */
+.health-image {
+    width: 75px; /* Set width to 75px */
+    height: 75px; /* Set height to 75px */
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Card Content */
+.health-content {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-slider {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .health-card {
+        width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mental-health-header,
+    .self-care-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .see-all-link {
+        margin-top: 10px;
+    }
+
+    .health-card {
+        width: 200px;
+    }
+}
+
+.see-all-link {
+    margin-top: 5px;
+    color: #505050;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.see-all-link:hover {
+    text-decoration: underline; 
+    color:rgb(255, 195, 66);
+
+}
+
+.nutrition-list {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nutrition-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollTrack 10s linear infinite;
+}
+
+
+
+.quiz-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-elements{
+    color: #505050;
+}
+.quiz-elements a{
+    color: #505050;
+}
+
+
+
+/* Footer Styles */
+.footer {
+    border-radius: 15px;
+    background-color: #ffffff; 
+    color: #505050; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Footer About Section */
+.footer-about {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-about h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #505050; 
+}
+
+.footer-about p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #505050; 
+}
+
+
+.footer-links {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-links h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66); /* Coral color for heading */
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #505050; /* Light blue text */
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(255, 195, 66); /* Coral color on hover */
+    text-decoration: underline;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-contact h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66) /* Coral color for heading */
+}
+
+.footer-contact p {
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 8px;
+}
+ .social-icons {
+    margin-top: 10px;
+}
+
+.social-icons h2{
+    margin-top: 35px;
+    color: rgb(255, 195, 66);
+}
+.social-icons a {
+    margin-top: 20px;
+    color: #505050;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-icons svg {
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill:  rgb(255, 195, 66);
+}
+
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #505050; 
+}
+
+/* Health Cards Section */
+.health-section {
+    padding-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Background color */
+}
+
+.health-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    background-color: white;
+}
+
+.card-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-slider {
+    display: flex;
+    gap: 20px;
+    animation: scrollLeft 20s linear infinite /* Add animation */
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.health-card {
+    background-color: #ffffff; /* Light background matching your theme */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Rounded corners */
+    transition: transform 0.3s ease;
+    width: 400px; /* Set width to 75px */
+    height: 350px; /* Set height to 75px */
+}
+
+.health-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside cards */
+.health-image {
+    width: 100%; 
+    height: 175px; /* Set height to 75px */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; 
+}
+
+/* Card Content */
+.health-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.health-content h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #505050; /* Text color */
+}
+
+.health-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #505050; /* Text color */
+}
+
+
+
+

@@ -1,0 +1,271 @@
+* {
+    background-color: rgb(255, 255, 255);
+}
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #ffffff;
+}
+header {
+  color: #000000;
+  padding:20px;
+  text-align: center;
+  background-image: url('music_bg.jpg');
+  background-size: cover; /* Ensures the image covers the entire header */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; 
+}
+
+h1 {
+  background-color: transparent;
+    font-size: 60px;
+    color: #000000;
+    font-style: oblique;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tagline{
+  background-color: transparent;
+  font-size: 20px;
+}
+
+ h4 {
+    font-size: 50px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.music-section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.music-image {
+    flex: 1;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.music-image img {
+    width: 80%;
+    border-radius: 50%; 
+}
+
+.music-text {
+    flex: 1;
+}
+
+.music-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.music-text p {
+    font-size: 20px; 
+    line-height: 1.6;
+    font-family:cursive;
+    font-style: italic;
+}
+
+.music-benefits {
+    padding: 20px;
+}
+
+.music-benefits h2, .music-therapy h2, .music-effect h2, .spotify-music h2{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px; 
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.music-benefits p , .music-effect p , .music-therapy p , .spotify-music p , .playlist-item p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px; 
+    line-height: 1.6; 
+    color: #000000; 
+}
+
+.music-benefits ol {
+    margin-top: 20px; 
+}
+
+.music-benefits li , .music-effect li{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 15px; 
+    font-size: 20px; 
+    color: #181818; 
+}
+
+.music-therapy .therapy-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Distribute space evenly */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
+    margin: 20px 0; /* Space above and below the flex container */
+}
+
+.music-therapy .therapy-item {
+    display: flex; /* Enable Flexbox for the item */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 10px; /* Space around each therapy item */
+    text-align: center; /* Center text under images */
+    width: 22%; /* Adjust width of each therapy item for proper layout */
+}
+
+.music-therapy .therapy-image {
+    width: 100%; /* Image takes full width of the container */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image fits well and maintains aspect ratio */
+    margin-bottom: 5px; /* Space between image and text */
+}
+
+.spotify-music {
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.playlists-container {
+    display: flex; /* Use Flexbox to align playlists */
+    flex-wrap: wrap; /* Allow the playlists to wrap on smaller screens */
+    justify-content: space-between; /* Space the items evenly */
+}
+
+.playlist-item {
+    flex: 1;
+    margin: 10px;
+    max-width: 300px; /* Control the max width for each playlist */
+    text-align: center; /* Center align the text */
+}
+
+.playlist-item iframe {
+    width: 100%; /* Ensure the embedded Spotify player takes full width */
+    height: 380px;
+}
+
+/* Footer Styles */
+.footer {
+    border-radius: 15px;
+    background-color: #ffffff; 
+    color: #505050; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Footer About Section */
+.footer-about {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-about h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #505050; 
+}
+
+.footer-about p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #505050; 
+}
+
+
+.footer-links {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-links h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66); /* Coral color for heading */
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #505050; /* Light blue text */
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(255, 195, 66); /* Coral color on hover */
+    text-decoration: underline;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-contact h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66) /* Coral color for heading */
+}
+
+.footer-contact p {
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 8px;
+}
+ .social-icons {
+    margin-top: 10px;
+}
+
+.social-icons h2{
+    margin-top: 35px;
+    color: rgb(255, 195, 66);
+}
+.social-icons a {
+    margin-top: 20px;
+    color: #505050;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-icons svg {
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill:  rgb(255, 195, 66);
+}
+/* Footer Bottom */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #505050; /* Light blue text */
+}
+

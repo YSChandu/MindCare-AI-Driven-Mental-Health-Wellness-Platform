@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fade-in 1s ease-out, bounce 1.2s ease; /* Fade in and bounce animation */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2c3e50; /* Soft dark blue for the title */
+}
+
+h3 {
+    color: #e74c3c; /* Calm red for error messages */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #3498db; /* Soft blue focus border */
+}
+
+input[type="submit"] {
+    background-color: #505050; /* Soft blue button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9; /* Slightly darker blue on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.message {
+    margin-bottom: 15px;
+    color: red;
+    font-size: 14px;
+    text-align: left;
+}
+
+p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #2c3e50; /* Dark text color */
+    text-align: left;
+}
+
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #505050; /* Matching link color */
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    color: rgb(255, 195, 66);
+    text-decoration: underline;
+}
+
+/* Adding some subtle animations to improve user experience */
+input[type="text"], input[type="password"] {
+    animation: fade-in 1.5s ease-out; /* Fade in form fields */
+}
+
+input[type="submit"] {
+    animation: pulse 2s infinite; /* Gentle pulsing for the login button */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

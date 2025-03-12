@@ -1,0 +1,337 @@
+* {
+    background-color: rgb(255, 255, 255);
+    color: #505050;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header{
+    color: #000000;
+    padding:20px;
+    text-align: center;
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    background-color: transparent;
+    font-size: 60px;
+    color: #000000;
+    font-style: oblique;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.music-section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.music-image {
+    flex: 1;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.music-image img {
+    width: 80%;
+    border-radius: 50%; 
+}
+
+.music-text {
+    flex: 1;
+}
+
+.music-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.music-text p {
+    font-size: 20px; 
+    line-height: 1.6;
+    font-family: cursive;
+    font-style: italic;
+}
+
+
+h2 {
+    font-size: 35px;
+    color: #000000;
+    margin: 0;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2:hover {
+    color: rgb(206, 75, 24);
+}
+
+h3 {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:#000
+}
+
+
+h4 {
+    font-size: 25px;
+}
+p {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.exercise-title {
+    font-weight: bold;
+    font-style:initial;
+}
+
+.exercise-title p{
+    padding-left: 50px;
+}
+
+.exrecise content {
+    padding-left: 70px;
+}
+
+.tagline {
+    font-size: 20px;
+    font-style: italic;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+ul li strong {
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+
+.workout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.workout-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.workout-image {
+    width: 400px;  /* Fixed width for uniform image size */
+    height: 400px; /* Fixed height to maintain aspect ratio */
+    object-fit: cover; /* Ensures image covers the area without stretching */
+    border-radius: 10px;
+    background-color: #e0e0e0; /* Placeholder color for consistency */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a slight shadow for a polished look */
+}
+
+.workout-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.workout-content h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.workout-content p {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 20px;
+    color: #000000;
+}
+
+/* Strong tag for emphasis */
+.workout-content strong {
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+}
+
+/* Styling for unordered lists within the workout content */
+.workout-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+    line-height: 1.6;
+}
+
+.workout-content ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.workout-content ul li:hover {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .workout-item {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .workout-image {
+        width: 100%;
+        height: 100%; 
+    }
+}
+
+
+.footer {
+    border-radius: 15px;
+    background-color: #ffffff; 
+    color: #505050; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Footer About Section */
+.footer-about {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-about h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #505050; 
+}
+
+.footer-about p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #505050; 
+}
+
+
+.footer-links {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-links h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66); /* Coral color for heading */
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #505050; /* Light blue text */
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(255, 195, 66); /* Coral color on hover */
+    text-decoration: underline;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-contact h3 {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66) /* Coral color for heading */
+}
+
+.footer-contact p {
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 8px;
+}
+ .social-icons {
+    margin-top: 10px;
+}
+
+.social-icons h2{
+    margin-top: 35px;
+    color: rgb(255, 195, 66);
+}
+.social-icons a {
+    margin-top: 20px;
+    color: #505050;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-icons svg {
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill:  rgb(255, 195, 66);
+}
+/* Footer Bottom */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #505050; /* Light blue text */
+}
+
+

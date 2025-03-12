@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quiz-container {
+    width: 600px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: solid;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 2px;
+}
+
+#quizplace{
+    display: none;
+}
+
+#start-page{
+    border:none;
+}
+
+.quiz-title {
+    font-size: 24px;
+    color: balck;
+    margin-bottom: 40px;
+}
+
+.quiz-box {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    text-align: start;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.options {
+    padding-top: 30px;
+    width: 500px;
+    align-items: start;
+    justify-items: center;
+    background-color:white;
+}
+
+#options-container{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    background-color:white;
+    color:black;
+    padding: 10px;
+    text-align: start;
+    font-size: 20px;
+}
+#options-container .next-btn{
+    margin: 10px;
+}
+#start-page p{
+    letter-spacing: 2px;
+}
+
+.next-btn {
+    background-color:white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border:none;
+    transition:0.1s;
+}
+.next-btn:hover {
+    border:solid;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: black;
+    color: black;
+}
+
+#start-btn {
+    margin-top: 20px;
+    background-color: black;
+    border:solid;
+    padding: 10px;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: black;
+    color: white;
+}
+
+#start-btn:hover{
+    background-color: white;
+    color:black;
+}
+
+#click-start{
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.selected-option {
+    border:solid;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: black;
+    color: black; /* Light background for better visibility */
+}
+
+.hidden {
+    display: none;
+}
