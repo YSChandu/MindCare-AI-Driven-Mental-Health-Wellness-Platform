@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{% static 'recommendation.css' %}">
+</head>
+<body>
+
+    {% if non_zero_disorder_scores %}
+            <h2 style="margin-left: 50px;">Your Disorder Scores:</h2>
+            <ul style="margin-left: 100px;
+            margin-bottom: 50px;
+            margin-top: 50px;">
+                {% for disorder, data in non_zero_disorder_scores.items %}
+                    <li>
+                        <strong>{{ disorder }}</strong>: {{ data.score }} 
+                        - <em>{{ data.description }}</em>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+    
+    <h2 style="margin-left: 50px;">Your Recommendations</h2>
+    <h2>{{message}}</h2>
+
+    <div class="recommend-container">
+        {% if book_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/re-book.jpg' %}" alt="Books">
+                <div style="margin-right: 100px;">
+                    <h2>Books</h2>
+                    <ul>
+                        {% for book in book_recommendations|slice:":7" %}
+                            <li>{{ book }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if exercise_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/breathing.jpg' %}" alt="Breathing Exercises">
+                <div>
+                    <h2>Breathing Exercises</h2>
+                    <ul>
+                        {% for exercise in exercise_recommendations|slice:":10" %}
+                            <li>{{ exercise }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if podcast_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/podcasts.jpg' %}" alt="Podcasts">
+                <div style="margin-right: 100px;">
+                    <h2>Podcasts</h2>
+                    <ul>
+                        {% for podcast in podcast_recommendations|slice:":10" %}
+                            <li>{{ podcast }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if movie_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/moviee2.jpg' %}" alt="Movies">
+                <div>
+                    <h2>Movies</h2>
+                    <ul>
+                        {% for movie in movie_recommendations|slice:":6" %}
+                            <li>{{ movie }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if music_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/re-music.gif' %}" alt="Music">
+                <div style="margin-right: 100px;">
+                    <h2>Music</h2>
+                    <ul>
+                        {% for track in music_recommendations|slice:":6" %}
+                            <li>{{ track }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if workout_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+                <img style="width:300px" src="{% static 'm.jpg/workout.gif' %}" alt="Workouts">
+                <div>
+                    <h2>Workouts</h2>
+                    <ul>
+                        {% for workout in workout_recommendations|slice:":10" %}
+                            <li>{{ workout }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if yoga_recommendations %}
+        <div class="recommend">
+            <div class="resource-elements-img">
+<<<<<<< HEAD
+                <img style="width:300px" src="{% static 'm.jpg/yogaa1.jpg' %}" alt="Yoga">
+=======
+                <img style="width:300px" src="{% static 'm.jpg/re-book.jpg' %}" alt="Yoga">
+>>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
+                <div>
+                    <h2>Yoga</h2>
+                    <ul>
+                        {% for pose in yoga_recommendations|slice:":10" %}
+                            <li>{{ pose }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+<<<<<<< HEAD
+        
+        
+        
+    </div>
+    <button style="margin-left : 900px;
+        text-decoration: none;
+        font-size: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        cursor: pointer;"  onclick="back();">Back</button>
+    <script>
+        function back(){
+            const loc ="{% url 'home' %}";
+            window.location.href=loc;
+         }
+    
+    </script>
+=======
+    </div>
+>>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
+</body>
+</html>

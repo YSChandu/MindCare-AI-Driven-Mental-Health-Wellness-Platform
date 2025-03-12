@@ -1,0 +1,564 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDCARE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+        /* Animation styles */
+        .card-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .card-slider {
+            display: flex;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+        
+        .health-card {
+            flex: 0 0 auto;
+            width: calc(20% - 20px);
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .health-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        @media (max-width: 1200px) {
+            .health-card {
+                width: calc(25% - 20px);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .health-card {
+                width: calc(33.33% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .health-card {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .health-card {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>MindCare</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'issues' %}">Mental Health Issues</a></li>
+                    <li><a href="resources">Well-being</a></li>
+                    <li><a href="schedules">Schedules</a></li>
+                    <li><a href="aboutus">Aboutus</a></li>
+                </ul>
+            </nav>
+            
+            <div class="profile"></div>
+                {% if user.is_authenticated%}
+                <button class="profile-btn" id="profileBtn">Profile</button>
+                <div class="dropdown-content" id="dropdown">
+                    <a href='profile'>My Profile</a>
+                    <a href="#">Schedule</a>
+                    <a href='logout'>Logout</a>
+                </div>
+                {%else%}
+                <a class="profile-btn" href={% url 'login' %}>Login</a>
+                {% endif%}
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div>
+            <img class ="homepage-image" src="{% static 'm.jpg/home pic.jpeg' %}" >
+        </div>
+        <div class="hero-content">
+            <div class="hero-element-welcome">
+                "Breathe in peace, breathe out stress."
+            </div>
+            <div class="hero-elements">
+                <p> Every journey begins with a single step. Start today with mindful practices designed to quiet your mind and heal your soul. Explore yoga, meditation, and uplifting resources tailored to your mental well-being.</p>
+            </div>
+            <div class= "hero-elements">
+                {% if user.is_authenticated%}
+                <p>Welcome {{user.username}} , lets start with a quiz</p>
+                {%else%}
+                <p>Welcome to <strong>MindCare</strong>, lets start with a quiz</p>
+                {% endif%}
+            </div>
+            <div class="hero-element">
+                <a href="">Take the Quiz</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="articles-section">
+        <h2>Featured Articles</h2>
+        <div class="article-list">
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="{% static 'm.jpg/download.jpg' %}" alt="Anxiety" class="article-graphic">
+                </div>
+                <div class="article-content">
+                    <h3>Understanding Anxiety</h3>
+                    <p>
+                        Anxiety is a feeling of fear, dread, and uneasiness that can be caused by the anticipation of danger. 
+                        It can be a normal reaction to stress, like when you're faced with a difficult problem at work or before taking a test.
+                        <span class="more-text"> However, anxiety disorders involve excessive worry or fear that affects daily life. Understanding its causes and symptoms is key to managing it effectively.
+                            <a href="https://magazine.medlineplus.gov/topic/anxiety/" class="inline-link">Medlineplus - Know more in this article</a>.
+                        </span>
+                        <span class="read-more-link">Read more</span>
+                    </p>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="{% static 'm.jpg/deperssion.jpg' %}" alt="Depression" class="article-graphic">
+                </div>
+                <div class="article-content">
+                    <h3>Managing Depression</h3>
+                    <p>
+                        Depression is a low mood that lasts for a long time, affecting everyday life. It is often triggered by a mix of genetic, psychological and environmental factors; studies show that the risk of becoming depressed can be increased by life events such as 
+                        <span class="more-text"> poverty, death of a loved one, physical illness or abuse. For some, the risk is also hereditary.
+                            Depression can be treated with a combination of psychotherapy, medication, and other approaches. Lifestyle changes, such as regular exercise, healthy eating, and stress reduction, can also play a significant role in recovery. Support from family and friends is invaluable.
+                            <a href = "https://www.news-medical.net/health/Genes-and-Depression.aspx" class = "inline-link">Medical.net - Know more in this article</a>
+                        </span>
+                        <span class="read-more-link">Read more</span>
+                    </p>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="{% static 'm.jpg/mindfulness.jpg' %}" alt="Mindfulness" class="article-graphic">
+                </div>
+                <div class="article-content">
+                    <h3>Mindfulness Techniques</h3>
+                    <p>
+                        Mindfulness is a type of meditation in which you focus on being intensely aware of what you're sensing and feeling in the moment.
+                        <span class="more-text"> People who practice mindfulness say it fundamentally changes how they experience life. For the past 40 years, researchers have been attempting to explain this in biological terms. Studies reveal that mindfulness may reduce anxiety and depression, boost your immune system, help you manage pain, allow you to unhook from unhealthy habits and addictions, soothe insomnia, reduce high blood pressure, and even change the structure and function of your brain in positive ways—perhaps in as little as 8 weeks of practice. It has been shown to reduce stress, improve mental clarity, and promote overall well-being. Techniques like deep breathing and guided imagery are often used.
+                        <a href = "https://www.mindful.org/the-science-of-mindfulness/" class = "inline-link">Minfulness - Know more in this article</a>
+                        
+                        </span>
+                        <span class="read-more-link">Read more</span>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    
+    <section id="Recommend" class="Recommend">
+    <div class="Recommendation">
+        <h1> Checkout </h1>
+        <hr>
+    </div>
+    </section>
+    <section style="background-color:rgb(250, 250, 250);">
+        <div style="
+            display: flex;
+            justify-content: space-around;
+            ">
+            <div>
+                <img style="margin-right: 50px;" src={% static 'm.jpg/bot2.gif'%}> 
+            </div>
+            <div style="display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            ">
+                <div style="
+                width:400px;
+                ">
+                    <h2>Wanna try our new AI Chatbot ???</h2>
+                </div>
+                <div >
+                
+                    <button 
+                    onclick="window.location.href='{% url 'chatbot' %}';"
+                    class="profile-btn" 
+                    style="
+                    padding: 10px 20px; 
+                    font-size: 16px; 
+                    cursor: pointer;">
+                        Click here
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mental-health" class="mental-health-section">
+        <div class="container">
+            <div class="mental-health-header">
+                <div>
+                    <h2>Mental Health Issues</h2> 
+                </div>
+                <div>
+                    <a class="see-all-link" onclick="navigatetoissues()">See All</a>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="card-slider mental-health-slider">
+                    <article class="health-card" onclick="navigateToMood();">
+                        <div>
+                            <img src="{% static 'm.jpg/mood.png' %}" alt="Mood Disorders" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Mood Disorders</h3>
+                            <p>Mood disorders primarily affect a person's emotional state, often resulting in periods of extreme sadness or mood elevation.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigateToOCD();" >
+                        <div>
+                            <img src="{% static 'm.jpg/Ocd.png' %}" alt="OCD" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>OCD</h3>
+                            <p>These disorders involve intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions).</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigateToTrauma();">
+                        <div>
+                            <img src="{% static 'm.jpg/trauma.png' %}" alt="Stress and Trauma" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Stress and Trauma</h3>
+                            <p>These disorders develop after exposure to a traumatic or stressful event.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigateToPersonality();">
+                        <div>
+                            <img src="{% static 'm.jpg/personality.png' %}" alt="Personality Disorders" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Personality Disorders</h3>
+                            <p>These disorders involve enduring patterns of behavior, cognition, and inner experience that deviate from cultural expectations.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigateToDissociative();">
+                        <img src="{% static 'm.jpg/disso.png' %}" alt="Dissociative Disorders" class="health-image">
+                        <div class="health-content">
+                            <h3>Dissociative Disorders</h3>
+                            <p>Dissociative disorders involve disruptions or breakdowns in memory, awareness, identity, or perception.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="self-care" class="self-care-section">
+        <div class="container">
+            <div class="self-care-header">
+                <div>
+                <h2>Self-Care</h2>
+                </div>
+                <div>
+                    <a style="cursor:pointer;" class="see-all-link" onclick="navigatetoselfcare();">See all</a>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="card-slider self-care-slider">
+                    <article class="health-card" onclick="navigatetoexercise();">
+                        <img src="{% static 'm.jpg/exercise3.jpeg' %}" alt="Workouts" class="health-image">
+                        <div class="health-content" >
+                            <h3>Workouts</h3>
+                            <p>Relieve stress and anxiety with curated workout routines for a healthy body and mind.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigatetoyoga();">
+                        <img src="{% static 'm.jpg/yoga2.jpeg' %}" alt="Yoga" class="health-image">
+                        <div class="health-content" >
+                            <h3>Yoga</h3>
+                            <p>A practice that connects the body, breath, and mind. It uses physical postures, breathing exercises, and meditation to improve overall health.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigatetomusic();">
+                        <img src="{% static 'm.jpg/music.jpeg' %}" alt="Music" class="health-image">
+                        <div class="health-content">
+                            <h3>Music</h3>
+                            <p>Discover music and podcasts designed to soothe your mind and elevate your mood.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigatetobreathing();">
+                        <img src="{% static 'm.jpg/breathing.jpeg.jpg' %}" alt="Breathing Exercises" class="health-image">
+                        <div class="health-content" >
+                            <h3>Breathing Exercises</h3>
+                            <p> Breathing technique offers several benefits to your body including reducing your blood pressure and heart rate and improving relaxation.</p>
+                        </div>
+                    </article>
+                    <article class="health-card" onclick="navigatetomovies();">
+                        <img src="{% static 'm.jpg/movies.jpeg' %}" alt="Movies" class="health-image">
+                        <div class="health-content" >
+                            <h3>Movies</h3>
+                            <p>Wanna see some awesome movies related to mental health .</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="quiz" class="quiz-section">
+        <div class="quiz-container">
+            <div  class="quiz-elements">
+                <h2>Mental Health Quiz</h2>
+            </div>
+            <div  class="quiz-elements">
+                <p>Take our survey to assess your mental health and get personalized recommendations.</p>
+            </div>
+            <div  class="quiz-elements">
+                <a href="" >click here to take the quiz</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@mindcare.com</p>
+                <p>Phone: +123-456-7890</p>
+                <p>Address: 123 Wellness Ave, Healthy City</p>
+            </div>
+    
+            <!-- Social Media Links -->
+            <div class="social-icons">
+                <h2>
+                    Follow us 
+                </h2>
+                <a href="https://www.facebook.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                </a>
+                <a href="https://www.google.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                        <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 MindCare. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const profileBtn = document.getElementById("profileBtn");
+            const dropdown = document.getElementById("dropdown");
+            
+            // Check if elements exist before adding event listeners
+            if (profileBtn && dropdown) {
+                profileBtn.addEventListener("click", function() {
+                    dropdown.classList.toggle("show");
+                });
+            
+                window.addEventListener("click", function(event) {
+                    if (!event.target.matches('.profile-btn')) {
+                        if (dropdown.classList.contains('show')) {
+                            dropdown.classList.remove('show');
+                        }
+                    }
+                });
+            }
+            
+           
+            if (document.querySelector('.mental-health-slider')) {
+                animateCards('.mental-health-slider');
+            }
+            
+           
+            if (document.querySelector('.self-care-slider')) {
+                animateCards('.self-care-slider');
+            }
+            
+           
+            function animateCards(sliderClass) {
+                const slider = document.querySelector(sliderClass);
+                if (!slider) return; // Exit if slider not found
+                
+                const cards = slider.querySelectorAll('.health-card');
+                if (cards.length === 0) return; // Exit if no cards
+                
+                const totalCards = cards.length;
+                
+                // Clone cards to create continuous effect
+                cards.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    slider.appendChild(clone);
+                });
+                
+                // Set initial position
+                let position = 0;
+                const cardWidth = cards[0].offsetWidth + 40; // 20px is the margin
+                const totalWidth = cardWidth * totalCards;
+                
+                let animationId;
+                
+                function moveSlider() {
+                    position -= 0.5; // Speed of movement (pixels per frame)
+                    
+                    // Reset position when all original cards are out of view
+                    if (position <= -totalWidth) {
+                        position = 0;
+                    }
+                    
+                    slider.style.transform = `translateX(${position}px)`;
+                    animationId = requestAnimationFrame(moveSlider);
+                }
+                
+                // Start animation
+                moveSlider();
+                
+                // Pause animation when tab is not visible
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) {
+                        cancelAnimationFrame(animationId);
+                    } else {
+                        moveSlider();
+                    }
+                });
+            }
+            
+            // Add event listeners to read-more links
+            document.querySelectorAll('.read-more-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default link behavior
+                    const moreText = link.previousElementSibling;
+                    if (moreText && moreText.style) {
+                        if (moreText.style.display === "inline") {
+                            moreText.style.display = "none";
+                            link.textContent = "Read more";
+                        } else {
+                            moreText.style.display = "inline";
+                            link.textContent = "Read less";
+                        }
+                    }
+                });
+            });
+            
+            // Progress bar scroll tracking
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                if (height > 0) { // Prevent division by zero
+                    const scrolled = (winScroll / height) * 100;
+                    document.body.style.setProperty('--scroll-width', `${scrolled}%`);
+                }
+            });
+            
+            // Hamburger menu
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".navbar ul");
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener("click", function () {
+                    navMenu.classList.toggle("show-nav");
+                });
+            }
+        });
+    
+        // Navigation functions
+        function navigateToMood() {
+            window.location.href = document.querySelector('a[href*="mood_issue"]')?.href || "#";
+        }
+        function navigateToOCD() {
+            window.location.href = document.querySelector('a[href*="OCD"]')?.href || "#";
+        }
+        function navigateToTrauma() {
+            window.location.href = document.querySelector('a[href*="trauma"]')?.href || "#";
+        }
+        function navigateToPersonality() {
+            window.location.href = document.querySelector('a[href*="personality_issue"]')?.href || "#";
+        }
+        function navigateToDissociative() {
+            window.location.href = document.querySelector('a[href*="dissociative"]')?.href || "#";
+        }
+        function navigatetoyoga() {
+            const loc = document.querySelector('a[href*="yoga"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetomusic() {
+            const loc = document.querySelector('a[href*="music"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetomovies() {
+            const loc = document.querySelector('a[href*="movies"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetoexercise() {
+            const loc = document.querySelector('a[href*="workout"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetobreathing() {
+            const loc = document.querySelector('a[href*="breathing"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetoselfhelpbooks() {
+            const loc = document.querySelector('a[href*="selfhelpbooks"]')?.href || "#";
+            window.location.href = loc;
+        }
+        function navigatetoselfcare() {
+            const loc = 'resources';
+            window.location.href = loc;
+        }
+        function navigatetoissues() {
+            const loc = document.querySelector('a[href*="issues"]')?.href || "#";
+            window.location.href = loc;
+        }
+    </script>
+</body>
+</html>

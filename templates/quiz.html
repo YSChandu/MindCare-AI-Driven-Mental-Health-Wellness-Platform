@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quiz</title>
+    <link rel="stylesheet" href="{% static 'quiz.css' %}">
+</head>
+<body>
+    <div>
+        <img id="img" src="{% static 'm.jpg/kungfu_quiz.jpeg' %}" alt="Quiz Image">
+    </div>
+    <div>
+        <img id="img2" style="display:none; width:500px;" src="{% static 'm.jpg/kungufu2.jpg' %}" alt="Quiz Image">
+    </div>
+    <form id="csrf-form">
+        {% csrf_token %}
+    </form>
+    
+    <div class="quiz-container">
+        <h2 class="quiz-title">Mental Health Quiz</h2>
+        <div id="stage-transition" style="display: none;">
+            <h3 style="padding:10px;">You've completed Stage 1!</h3>
+            <p>You are now entering Stage 2 with more specific questions.</p>
+        </div>
+        <div id="start-page">
+            <p>This quiz has two stages where the first stage has more generalized questions about mental health issues. Please note that the main aim of this quiz is to analyze the user's mental health issue based on their responses. Don't panic and follow the recommendations provided at the end.</p>
+            <button id="start-btn" class="next-btn" onclick="startQuiz()">Start Quiz</button>
+            <p id="click-start">Click the start button to begin.</p>
+        </div>
+
+        <div id="quizplace" style="display: none;">
+            <div class="quiz-box">
+                <div class="question">
+                    <h3 id="question-text"></h3>
+                </div>
+                <div id="options-container" class="options"></div>
+                <button id="next-btn" class="next-btn" onclick="submitResponse()">Next</button>
+            </div>
+        </div>
+
+        <div id="completion-message" class="hidden">
+            <h3>Thank you for completing the quiz!</h3>
+            <p>Your responses have been recorded.</p>
+            <div id="disorder-scores"></div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = JSON.parse(`{{ quiz_data|safe }}`);
+        let currentQuestionIndex = 0;
+        let selectedOptionId = null;
+        const threshold = 200;
+        const identifiedDisorders = [];
+        let stage = 1;
+        let stage1Scores = {};
+
+        const disorderScores = {
+            "Depression": 0,
+            "Mood Disorders": 0,
+            "Anxiety Disorders": 0,
+            "Somatic Disorders": 0,
+            "Trauma-Related Disorders": 0,
+            "Stress-Related Disorders": 0,
+            "Obsessive-Compulsive Disorder (OCD)": 0,
+            "Psychotic Disorders": 0,
+            "Dissociative Disorders": 0,
+            "Neurocognitive Disorders": 0,
+            "Neurodevelopmental Disorders": 0,
+            "Substance Use Disorders": 0,
+            "Personality Disorders": 0,
+            "Sleep-Wake Disorders": 0,
+            "Self-Harm": 0,
+            "Eating Disorders": 0
+        };
+
+        function resetScores() {
+            for (const disorder in disorderScores) {
+                disorderScores[disorder] = 0;
+            }
+        }
+        
+        function checkDisorders() {
+            identifiedDisorders.length = 0; // Clear previous identified disorders
+            for (const [disorder, score] of Object.entries(disorderScores)) {
+                if (score > threshold) {
+                    identifiedDisorders.push(disorder);
+                }
+            }
+            return identifiedDisorders.length > 0;
+        }
+
+        function showHealthyMessage() {
+            document.getElementById('quizplace').style.display = 'none';
+            const completionMessageDiv = document.getElementById('completion-message');
+            completionMessageDiv.classList.remove('hidden');
+            completionMessageDiv.innerHTML = `
+                <h3 style="color: #333; text-align: center; margin-bottom: 20px;">Great news!</h3>
+                <p style="color: #666; text-align: center; margin-bottom: 20px;">Based on your responses, you're doing well! No specific concerns were identified that require further assessment.</p>
+            `;
+        }
+        
+        function submitResponse() {
+            if (!selectedOptionId) {
+                alert('Please select an option.');
+                return;
+            }
+        
+            const filteredQuestions = filterQuestions(stage);
+        
+            if (currentQuestionIndex < filteredQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadNextQuestion();
+            } else if (stage === 1) {
+                // Store stage 1 scores
+                stage1Scores = {...disorderScores};
+                
+                // Check if any disorders were identified in stage 1
+                const hasDisorders = checkDisorders();
+                
+                if (hasDisorders) {
+                    stage = 2;
+                    resetScores(); // Reset scores to zero before starting stage 2
+                    showStageTransition();
+                } else {
+                    showHealthyMessage();
+                }
+            } else {
+                showCompletionMessage();
+            }
+        }
+
+        function showCompletionMessage() {
+            document.getElementById('quizplace').style.display = 'none';
+            const completionMessageDiv = document.getElementById('completion-message');
+            completionMessageDiv.classList.remove('hidden');
+            
+            const csrfTokenElement = document.querySelector('[name=csrfmiddlewaretoken]');
+            if (!csrfTokenElement) {
+                console.error('CSRF token not found!');
+                alert('CSRF token is missing. Please refresh the page.');
+                return;
+            }
+        
+            const csrfToken = csrfTokenElement.value;
+        
+            fetch('/process-quiz/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                body: JSON.stringify({ disorder_scores: disorderScores })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect_url) {
+                    window.location.href = data.redirect_url;
+                }
+            })
+            .catch(error => {
+                console.error("Error processing quiz results:", error);
+                alert("An error occurred while processing your quiz results. Please try again.");
+            });
+        }
+
+        function filterQuestions(stage) {
+            return quizData.filter(question => stage === 1 ? question.type === "stage_1" : identifiedDisorders.includes(question.type));
+        }
+
+        function showStageTransition() {
+            document.getElementById('quizplace').style.display = 'none';
+            document.getElementById('stage-transition').style.display = 'block';
+            document.getElementById('img2').style.display = 'block';
+            
+            setTimeout(() => {
+                document.getElementById('stage-transition').style.display = 'none';
+                document.getElementById('img2').style.display = 'none';
+                document.getElementById('quizplace').style.display = 'block';
+                currentQuestionIndex = 0;
+                loadNextQuestion();
+            }, 2000);
+        }
+
+        function displayQuestion(question) {
+            document.getElementById('question-text').textContent = question.text;
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            selectedOptionId = null;
+
+            question.options.forEach(option => {
+                const optionButton = document.createElement('button');
+                optionButton.textContent = option.text;
+                optionButton.classList.add('next-btn');
+                optionButton.onclick = () => selectOption(optionButton, option);
+                optionsContainer.appendChild(optionButton);
+            });
+        }
+
+        function selectOption(button, option) {
+            const options = document.querySelectorAll('.next-btn');
+            options.forEach(opt => opt.classList.remove('selected-option'));
+            button.classList.add('selected-option');
+            selectedOptionId = option.id;
+
+            Object.keys(disorderScores).forEach(disorder => {
+                disorderScores[disorder] += option.disorders[disorder] || 0;
+            });
+        }
+        
+        function startQuiz() {
+            document.getElementById('start-page').style.display = 'none';
+            document.getElementById('img').style.display = 'none';
+            document.getElementById('quizplace').style.display = 'block';
+            loadNextQuestion();
+        }
+
+        function loadNextQuestion() {
+            const filteredQuestions = filterQuestions(stage);
+            if (currentQuestionIndex < filteredQuestions.length) {
+                displayQuestion(filteredQuestions[currentQuestionIndex]);
+            } else {
+                submitResponse();
+            }
+        }
+    </script>
+</body>
+</html>

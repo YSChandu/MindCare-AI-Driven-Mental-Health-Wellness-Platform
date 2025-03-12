@@ -1,0 +1,994 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'workout.css' %}">
+    <title>Workout</title>
+</head>
+<body>
+    <header>
+        <h1>Workouts</h1>
+    </header>
+    <hr>
+    <section class="music-section">
+        <div class="music-image">
+          <img src="{% static 'm.jpg/workout_intro.png' %}" alt="Music Image">
+        </div>
+      
+        <div class="music-text">
+          <p>Whether you were once much more physically active or have never been one to exercise regularly, now is a great time to start an exercise and fitness regimen. Getting and staying in shape is just as important for seniors as it is for younger people.</p>
+          <p> Getting your heart rate up and challenging your muscles benefits virtually every system in your body and improves your physical and mental health in myriad ways. Physical activity helps maintain a healthy blood pressure, keeps harmful plaque from building up in your arteries, reduces inflammation, improves blood sugar levels, strengthens bones, and helps stave off depression. In addition, a regular exercise program can make your sex life better, lead to better quality sleep, reduce your risk of some cancers, and is linked to longer life.</p>
+             </div>
+    </section>
+      
+        <h2>Introduction</h2>
+        <p>There are many reasons why physical activity is good for your body – having a healthy heart and improving your joints and bones are just two, but did you know that physical activity is also beneficial for your mental health and well-being?</p>
+        <p>We need to change how we view physical activity in the UK to not see it as something we ‘have to do’, ‘should do’ or ‘ought to do’ for our health. But as something that we do because we value its positive benefits to our well-being.</p>
+        <p>As part of our work to promote better mental health, we have produced a pocket guide to show the positive effect physical activity can have on your mental well-being, including some tips and suggestions to help you get started.</p>
+        <p>Being active doesn’t just mean doing sports or going to the gym. There are many other ways to be active. Find the one that works for you, and let’s all get physical!</p>
+        <p><em>'It is exercise alone that supports the spirits, and keeps the mind in vigour.' - Marcus Tullius Cicero</em></p>
+    </section>
+    <section>
+        <h2>Why Should We Workout?</h2>
+        <p>Working out offers numerous benefits, ranging from physical health to mental well-being. 
+            Regular physical activity improves cardiovascular health, increases strength and flexibility, 
+            enhances mood, and boosts overall longevity.</p>
+        <p>Exercise also helps in maintaining a healthy 
+            body weight, preventing chronic diseases such as diabetes and heart disease, and 
+            improving cognitive function.</p>
+            <h4>Impact of Physical Activity on Well-being</h4>
+            <p>Physical activity has a huge potential to enhance our well-being. Even a short burst of 10 minutes of brisk walking increases our mental alertness, energy, and positive mood.</p>
+            <p>Regular physical activity can increase self-esteem, reduce stress and anxiety, and improve the quality of life for those experiencing mental health problems.</p>
+        
+    </section>
+    <section>
+        <h2>What is Physical Activity?</h2>
+        <p>At a very basic level, physical activity means any movement of your body that uses your muscles and expends energy. One of the great things about physical activity is that there are endless possibilities and there will be an activity to suit almost everyone!</p>
+        <p>It is recommended that the average adult should do between 75 and 150 minutes of exercise a week. This can be either moderate intensity exercise, such as walking, hiking or riding a bike, or it can be more vigorous activities, such as running, swimming fast, aerobics or skipping with a rope.</p>
+        <p>The government defines well-being as ‘a positive physical, social and mental state’. For our purposes, we are focusing on mental well-being.</p>
+        <p>Mental well-being encompasses factors such as:</p>
+        <ul>
+            <li>The sense of feeling good about ourselves and being able to function well individually or in relationships</li>
+            <li>The ability to deal with the ups and downs of life, such as coping with challenges and making the most of opportunities</li>
+            <li>The feeling of connection to our community and surroundings</li>
+            <li>Having control and freedom over our lives</li>
+            <li>Having a sense of purpose and feeling valued</li>
+        </ul>
+        </section>
+    <section class = "Types">
+        <h2>Types of Workouts</h2>
+        <ul>
+            <li> Cardiovascular (Aerobic) Workouts </li>
+            <li> Strength Training (Anaerobic) Workouts  </li>
+            <li> Flexibility Training </li>
+            <li> Balance & Stability Workouts </li>
+            <li> High-Intensity Interval Training (HIIT)</li>
+            <li> Bodyweight Workouts </li>
+            
+        </ul>
+        <section>
+                <h2>1. Cardiovascular (Aerobic) Workouts</h2>
+                <p>
+                    Cardiovascular or aerobic workouts increase heart rate, improve endurance, and help burn calories. They primarily involve sustained physical activity that raises your heart rate and breathing.
+                </p>
+            
+                <h3>Benefits of Cardiovascular Workouts</h3>
+                <ul>
+                    <li>Improves Heart Health: Strengthens the heart and improves circulation.</li>
+                    <li>Aids in Weight Loss: Burns calories and increases metabolism.</li>
+                    <li>Boosts Mood: Releases endorphins, reducing stress and anxiety.</li>
+                    <li>Increases Stamina: Enhances endurance for daily activities.</li>
+                    <li>Regulates Blood Sugar: Helps manage blood glucose levels.</li>
+                    <li>Reduces Risk of Diseases: Lowers the risk of heart disease, hypertension, and stroke.</li>
+                </ul>
+            
+                <h3>Who Should Do Cardiovascular Workouts?</h3>
+                <ul>
+                    <li>15 to 20 years: Ideal for improving endurance, energy levels, and keeping a healthy weight.</li>
+                    <li>Above 40: Great for keeping the heart healthy and reducing the risk of chronic conditions like heart disease and diabetes. Low-impact versions are recommended.</li>
+                </ul>
+            
+                <h3>Types of Cardiovascular Workouts</h3>
+                <ul>
+                    <li><strong>1. Walking</strong></li>
+                    <li><strong>2. Marching in Place</strong></li>
+                    <li><strong>3. Jogging</strong></li>
+                    <li><strong>4. Swimming</strong></li>
+                    <li><strong>5. Dancing</strong></li>
+                </ul>
+            
+                <div class="workout-container">
+                    <!-- Walking -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/walking.png' %}" alt="Walking" class="workout-image">
+                        <div class="workout-content">
+                            <h4>1. Walking</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Start by standing upright with your feet shoulder-width apart.</li>
+                                <li>Walk at a steady pace, swinging your arms naturally.</li>
+                                <li>Begin with a 5–10-minute warm-up, then increase speed as comfortably.</li>
+                                <li>Maintain a brisk pace for 20-30 minutes, then cool down at a slower pace for 5 minutes.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Slouching or poor posture and overstriding (taking steps that are too long) can lead to discomfort or injury.</p>
+                            <p><strong>Key Things to Check:</strong> Keep your shoulders relaxed and your back straight. Walk at a pace where you can talk comfortably but not sing.</p>
+                            <p><strong>Specific Benefits:</strong> Walking improves cardiovascular endurance, boosts circulation, and enhances joint mobility. It's a low-impact activity, suitable for beginners and all age groups.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Marching in Place -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/marching.jpg' %}" alt="Marching in Place" class="workout-image">
+                        <div class="workout-content">
+                            <h4>2. Marching in Place</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Stand tall with your feet shoulder-width apart.</li>
+                                <li>Begin lifting one knee to hip height, then alternate with the other knee.</li>
+                                <li>Swing your arms naturally, coordinating with your leg movements.</li>
+                                <li>Continue for 5-10 minutes at a moderate pace, gradually increasing speed.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Not lifting the knees high enough or keeping your arms stiff can reduce the effectiveness of the exercise.</p>
+                            <p><strong>Key Things to Check:</strong> Engage your core and lift your knees to at least hip level, keeping your movements controlled and rhythmic.</p>
+                            <p><strong>Specific Benefits:</strong> Marching in place is an easy indoor aerobic workout that increases heart rate, boosts metabolism, and improves leg strength and balance.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Jogging -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/Jogging.gif' %}" alt="Jogging" class="workout-image">
+                        <div class="workout-content">
+                            <h4>3. Jogging</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Begin with a light warm-up, such as walking or marching.</li>
+                                <li>Start jogging at a comfortable pace, keeping good posture and breathing rhythmically.</li>
+                                <li>Gradually increase speed based on your fitness level.</li>
+                                <li>Cool down by slowing to a walk for 5 minutes after jogging.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Landing heavily on the heels, running too fast too soon.</p>
+                            <p><strong>Key Things to Check:</strong> Maintain an upright posture and land mid-foot. Jog at a pace where you can still carry on a conversation.</p>
+                            <p><strong>Specific Benefits:</strong> Jogging burns calories efficiently, improves cardiovascular health and endurance, and strengthens leg muscles and bones.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Swimming -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/swimming.gif' %}" alt="Swimming" class="workout-image">
+                        <div class="workout-content">
+                            <h4>4. Swimming</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Start with a light warm-up swim, moving your arms and legs gently.</li>
+                                <li>Swim laps at a moderate pace, alternating between strokes (freestyle, breaststroke, backstroke).</li>
+                                <li>Continue for 20-30 minutes, adjusting speed and rest intervals as needed.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Poor breathing technique (holding breath too long), stiff movements.</p>
+                            <p><strong>Key Things to Check:</strong> Practice rhythmic breathing, exhaling underwater and inhaling while turning your head. Keep movements smooth and relaxed.</p>
+                            <p><strong>Specific Benefits:</strong> Swimming is a low-impact workout, perfect for joint health. It builds full-body strength and endurance, and improves lung capacity and cardiovascular health.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Dancing -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/dancing.gif' %}" alt="Dancing" class="workout-image">
+                        <div class="workout-content">
+                            <h4>5. Dancing</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Select upbeat music with a rhythm that makes you want to move.</li>
+                                <li>Start with light movements such as side steps or simple arm movements.</li>
+                                <li>Gradually introduce more complex moves (twists, jumps, spins).</li>
+                                <li>Dance continuously for 20-30 minutes, adjusting intensity based on fitness level.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Rigid or stiff movements, overexertion especially with complex moves.</p>
+                            <p><strong>Key Things to Check:</strong> Stay relaxed and enjoy the movements. Keep your body in motion to support your heart rate.</p>
+                            <p><strong>Specific Benefits:</strong> Dancing is a fun way to burn calories, improve heart health, increase coordination, flexibility, and balance. It also enhances mood and reduces stress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <h3>Conclusion</h3>
+                <p>
+                    Cardiovascular workouts are essential for maintaining overall health and well-being. They not only enhance heart health and endurance but also play a significant role in weight management and stress reduction. By incorporating various aerobic activities like walking, jogging, swimming, and dancing into your routine, individuals of all ages can improve their fitness levels and enjoy a happier, healthier lifestyle. Regular engagement in cardiovascular exercises helps to mitigate the risk of chronic diseases and contributes to better mental health by releasing endorphins. Making aerobic workouts a consistent part of your life can lead to long-term health benefits and improved quality of life.
+                </p>
+        </section>
+        <section>
+                <h2>2. Strength Training (Anaerobic) Workouts</h2>
+                <p>
+                    Strength training or anaerobic exercises focus on building muscle strength, power, and endurance. These workouts involve short bursts of intense activity that push muscles to work harder than usual, typically without relying on oxygen for energy. This leads to muscle building, increased strength, and improved metabolic function.
+                </p>
+                
+                <h3>Benefits of Strength Training (Anaerobic) Workouts</h3>
+                <ul>
+                    <li>Increases Muscle Mass: Builds and tones muscles.</li>
+                    <li>Boosts Metabolism: Increases resting metabolic rate, helping in fat loss.</li>
+                    <li>Strengthens Bones: Enhances bone density and reduces the risk of osteoporosis.</li>
+                    <li>Improves Posture: Strengthens muscles around joints, aiding in stability and balance.</li>
+                    <li>Reduces Risk of Injury: Strengthens ligaments, tendons, and joints.</li>
+                    <li>Increases Power and Endurance: Enhances performance in daily activities and sports.</li>
+                </ul>
+            
+                <h3>Who Should Do Strength Training?</h3>
+                <ul>
+                    <li>15 to 20 years: Ideal for building a solid foundation of muscle and increasing physical capacity.</li>
+                    <li>Above 40: Strength training is crucial for supporting muscle mass, increasing bone density, and improving balance and posture. Low to moderate weights or resistance are recommended for beginners.</li>
+                </ul>
+            
+                <h3>Types of Strength Training Workouts</h3>
+                <ul>
+                    <li><strong>1. Weightlifting</strong></li>
+                    <li><strong>2. Squats</strong></li>
+                    <li><strong>3. Sprinting</strong></li>
+                    <li><strong>4. Plyometrics (Jump Training)</strong></li>
+                    <li><strong>5. High-Intensity Interval Training (HIIT)</strong></li>
+                    <li><strong>6. Bodyweight Resistance Exercises</strong></li>
+                </ul>
+
+                <div class="workout-container">
+                    <!-- Weightlifting -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/weightlifter.gif' %}" alt="Weightlifting" class="workout-image">
+                        <div class="workout-content">
+                            <h4>1. Weightlifting</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Choose a barbell or dumbbells and select a weight suitable for your fitness level.</li>
+                                <li>Perform compound movements like deadlifts, bench presses, or shoulder presses.</li>
+                                <li>For deadlifts, stand with feet shoulder-width apart, hinge at the hips, grip the barbell, and lift by engaging your core and glutes.</li>
+                                <li>Perform 8-12 reps per set, ensuring proper form.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Lifting too heavy too soon and using poor form (e.g., rounded back during deadlifts).</p>
+                            <p><strong>Key Things to Check:</strong> Keep your core engaged and your back straight during all lifts. Focus on controlled movements, avoiding jerking motions.</p>
+                            <p><strong>Specific Benefits:</strong> Builds overall body strength, increases muscle mass and bone density, and boosts metabolism for fat loss.</p>
+                        </div>
+                    </div>
+
+                    <!-- Squats -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/squat.gif' %}" alt="Squats" class="workout-image">
+                        <div class="workout-content">
+                            <h4>2. Squats</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Stand with feet shoulder-width apart, toes slightly pointed outward.</li>
+                                <li>Bend your knees and hips as if sitting back into a chair, keeping your chest up and back straight.</li>
+                                <li>Lower until your thighs are parallel to the ground, then push up through your heels to return to the starting position.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Knees caving inward and bending forward at the waist.</p>
+                            <p><strong>Key Things to Check:</strong> Keep your knees aligned with your toes, and engage your core to maintain a neutral spine.</p>
+                            <p><strong>Specific Benefits:</strong> Strengthens lower body muscles (glutes, quads, hamstrings), improves mobility in the hips and ankles, and enhances core stability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sprinting -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/sprinting.gif' %}" alt="Sprinting" class="workout-image">
+                        <div class="workout-content">
+                            <h4>3. Sprinting</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Warm up with light jogging for 5-10 minutes.</li>
+                                <li>Start with short-distance sprints (30-50 meters), running at full speed.</li>
+                                <li>Rest for 1-2 minutes between sprints, then repeat for 5-10 rounds.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Poor running form (e.g., hunched shoulders) and sprinting without proper warm-up, risking injury.</p>
+                            <p><strong>Key Things to Check:</strong> Maintain an upright posture with core engaged. Drive your knees up and pump your arms for momentum.</p>
+                            <p><strong>Specific Benefits:</strong> Increases speed and power, improves cardiovascular and muscular endurance, and burns calories quickly due to high intensity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Plyometrics -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/jumptraining.gif' %}" alt="Plyometrics" class="workout-image">
+                        <div class="workout-content">
+                            <h4>4. Plyometrics (Jump Training)</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Start with basic moves like squat jumps or box jumps.</li>
+                                <li>For squat jumps, squat down, then explode up, jumping as high as you can, and land softly.</li>
+                                <li>For box jumps, jump onto a sturdy platform or box, land with both feet, then step back down and repeat.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Landing too hard, putting pressure on joints, and not engaging the core during the jump.</p>
+                            <p><strong>Key Things to Check:</strong> Land softly with bent knees to absorb impact, and engage your core to support balance and control.</p>
+                            <p><strong>Specific Benefits:</strong> Improves explosive power and agility, increases muscular endurance, and strengthens leg muscles and improves joint stability.</p>
+                        </div>
+                    </div>
+
+                    <!-- High-Intensity Interval Training (HIIT) -->
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/hiit.gif' %}" alt="HIIT" class="workout-image">
+                        <div class="workout-content">
+                            <h4>5. High-Intensity Interval Training (HIIT)</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Perform short bursts of high-intensity exercises (like burpees, sprinting, or jumping jacks) for 20-40 seconds.</li>
+                                <li>Follow each burst with 10-20 seconds of rest or low-intensity recovery (walking or slow jogging).</li>
+                                <li>Repeat the circuit for 15-30 minutes.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Pushing too hard without proper form and not allowing enough recovery time between intervals.</p>
+                            <p><strong>Key Things to Check:</strong> Maintain good form, even at high intensity, and pace yourself according to your fitness level.</p>
+                            <p><strong>Specific Benefits:</strong> Burns calories and fat in a short amount of time, improves cardiovascular fitness and muscular endurance, and boosts metabolism for hours post-workout.</p>
+                        </div>
+                    </div>
+
+                    <div class="workout-item">
+                        <img src="{% static 'm.jpg/resistance.gif' %}" alt="Bodyweight Resistance Exercises" class="workout-image">
+                        <div class="workout-content">
+                            <h4>6. Bodyweight Resistance Exercises</h4>
+                            <p><strong>Steps to Do It:</strong></p>
+                            <ul>
+                                <li>Use your body weight to perform exercises like push-ups, pull-ups, planks, or lunges.</li>
+                                <li>For push-ups, start in a plank position, lower your chest toward the ground by bending your elbows, and push back up.</li>
+                                <li>For lunges, step one foot forward, lower your hips until both knees are bent at a 90-degree angle, then return to standing.</li>
+                            </ul>
+                            <p><strong>Common Mistakes:</strong> Letting hips sag during planks and poor form leading to ineffective workouts.</p>
+                            <p><strong>Key Things to Check:</strong> Keep your body in a straight line for push-ups and planks, and ensure your knees do not go past your toes in lunges.</p>
+                            <p><strong>Specific Benefits:</strong> Builds functional strength using body weight, improves flexibility and balance, and can be done anywhere, requiring no equipment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Conclusion</h3>
+                <p>
+                    Strength training is a crucial component of a balanced fitness regimen. It not only builds muscle and improves physical performance but also has significant benefits for overall health, including better bone density and metabolic function. Incorporating a variety of strength training workouts, from weightlifting to bodyweight exercises, can help individuals of all ages achieve their fitness goals and enhance their quality of life. By prioritizing proper form and progressively challenging the body, anyone can reap the rewards of strength training.
+                </p>
+            
+            </section>
+        <section>
+            <h2>Flexibility Training</h2>
+            <p>Flexibility training focuses on improving the range of motion of muscles and joints, which enhances physical performance and reduces the risk of injury. Flexible exercises help with muscle elongation, improve posture, and enhance overall movement patterns.</p>
+            
+            <h3>Benefits of Flexibility Training</h3>
+            <ul>
+                <li>Increased Range of Motion: Improves joint flexibility and muscle elasticity.</li>
+                <li>Enhanced Muscle Coordination: Promotes better muscle coordination and balance.</li>
+                <li>Improved Posture: Helps in supporting better body alignment.</li>
+                <li>Reduced Risk of Injury: Reduces stiffness and the likelihood of muscle strains.</li>
+                <li>Relieves Stress: Alleviates tension and stress in the muscles.</li>
+                <li>Boosts Circulation: Enhances blood flow to muscles and tissues.</li>
+            </ul>
+        
+            <h3>Who Should Do Flexibility Training?</h3>
+            <ul>
+                <li>All Ages: Flexibility training is beneficial for everyone, from young athletes to older adults.</li>
+                <li>For 15 to 20 years: Essential for athletes and active individuals to support muscle balance and avoid injury.</li>
+                <li>Above 40: Important to prevent stiffness, improve mobility, and keep functional movement.</li>
+            </ul>
+        
+            <h3>Types of Flexibility Training</h3>
+            <ul>
+                <li><strong>1. Static Stretching</strong></li>
+                <li><strong>2. Dynamic Stretching</strong></li>
+                <li><strong>3. PNF Stretching (Proprioceptive Neuromuscular Facilitation)</strong></li>
+                <li><strong>4. Yoga</strong></li>
+                <li><strong>5. Pilates</strong></li>
+            </ul>
+
+            <div class="workout-container">
+                <!-- Static Stretching -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/static.gif' %}" alt="Static Stretching" class="workout-image">
+                    <div class="workout-content">
+                        <h4>1. Static Stretching</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Assume a stretch position where a muscle group is elongated.</li>
+                            <li>Hold the stretch for 15-30 seconds without bouncing.</li>
+                            <li>Focus on controlled, deep breathing.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Bouncing during the stretch and overstretching beyond comfort, leading to strain.</p>
+                        <p><strong>Key Things to Check:</strong> Hold stretches in a comfortable range, relax, and breathe deeply to aid muscle relaxation.</p>
+                        <p><strong>Specific Benefits:</strong> Increases muscle flexibility and joint range of motion, improves muscle recovery post-workout, and is ideal for cooling down after exercise.</p>
+                    </div>
+                </div>
+
+                <!-- Dynamic Stretching -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/dynamic.gif' %}" alt="Dynamic Stretching" class="workout-image">
+                    <div class="workout-content">
+                        <h4>2. Dynamic Stretching</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Move muscles through a full range of motion in a controlled, rhythmic manner.</li>
+                            <li>Examples include leg swings, arm circles, or walking lunges.</li>
+                            <li>Perform 10-12 reps per movement, gradually increasing range and intensity.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Jerky or uncontrolled movements and moving too fast without warming up.</p>
+                        <p><strong>Key Things to Check:</strong> Perform smooth, controlled movements, and gradually increase intensity and speed.</p>
+                        <p><strong>Specific Benefits:</strong> Prepares muscles for physical activity, enhances blood flow and muscle activation, and improves coordination and mobility.</p>
+                    </div>
+                </div>
+
+                <!-- PNF Stretching -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/pnf.gif' %}" alt="PNF Stretching" class="workout-image">
+                    <div class="workout-content">
+                        <h4>3. PNF Stretching (Proprioceptive Neuromuscular Facilitation)</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Involves alternating between contracting and relaxing muscles during a stretch.</li>
+                            <li>For example, stretch a muscle (like the hamstring), contract it against resistance for 5-10 seconds, then relax and deepen the stretch.</li>
+                            <li>Repeat 2-3 times per muscle group.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Using too much force during contraction and not holding the contraction long enough.</p>
+                        <p><strong>Key Things to Check:</strong> Use moderate resistance during contraction and ensure the muscle is fully relaxed during the stretch phase.</p>
+                        <p><strong>Specific Benefits:</strong> Maximizes flexibility by targeting deeper muscles, effective in increasing static flexibility and range of motion, and is ideal for athletes or rehabilitation purposes.</p>
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/yoga.gif' %}" alt="Yoga" class="workout-image">
+                    <div class="workout-content">
+                        <h4>4. Yoga</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Follow a series of postures that involve stretching, holding, and controlled breathing.</li>
+                            <li>Example poses include Downward Dog, Warrior Pose, and Child's Pose.</li>
+                            <li>Each pose is held for 15-60 seconds, focusing on deep breathing and mindfulness.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Overextending or forcing into poses and holding your breath during poses.</p>
+                        <p><strong>Key Things to Check:</strong> Align your body properly to avoid injury and maintain controlled, deep breathing.</p>
+                        <p><strong>Specific Benefits:</strong> Improves flexibility, balance, and strength, reduces stress and promotes relaxation, and enhances mental focus and body awareness.</p>
+                    </div>
+                </div>
+
+                <!-- Pilates -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/pilates1.gif' %}" alt="Pilates" class="workout-image">
+                    <div class="workout-content">
+                        <h4>5. Pilates</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Involves exercises that target core strength, flexibility, and balance.</li>
+                            <li>Example exercises include leg stretches, the Hundred, and the Pilates roll-up.</li>
+                            <li>Movements are performed slowly and with control, focusing on core engagement and breathing.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Moving too fast without control and failing to engage the core properly during exercises.</p>
+                        <p><strong>Key Things to Check:</strong> Perform exercises with precision and focus on form, and engage the core throughout every movement.</p>
+                        <p><strong>Specific Benefits:</strong> Increases flexibility while strengthening muscles, improves posture and core stability, and helps with injury prevention by enhancing body awareness.</p>
+                    </div>
+                </div>
+            </div>
+
+        
+            <h3>Conclusion</h3>
+            <p>Flexibility training is essential for maintaining a healthy range of motion in muscles and joints. Each form of flexibility training serves different purposes, whether it’s preparing the body for activity (dynamic stretching), improving recovery (static stretching), or enhancing overall flexibility and mind-body connection (yoga and Pilates).</p>
+            <p>These exercises are beneficial for all age groups, including those aged 15-20 for athletic performance and adults over 40 to maintain mobility and prevent stiffness. Flexibility training is crucial for reducing injury risk and enhancing physical well-being across all ages and fitness levels.</p>
+        </section>
+
+        <section>
+            <h2>Balance & Stability Workouts</h2>
+            <p>Balance and stability exercises focus on improving coordination, stability, and control over your body. These exercises enhance your ability to maintain posture, reduce the risk of falls, and strengthen core muscles, which are vital for overall physical performance.</p>
+            
+            <h3>Benefits of Balance & Stability Workouts</h3>
+            <ul>
+                <li>Improved Posture: Strengthens muscles that help you maintain proper body alignment.</li>
+                <li>Enhanced Coordination: Increases your body's ability to coordinate movements efficiently.</li>
+                <li>Injury Prevention: Helps reduce the risk of falls or instability-related injuries.</li>
+                <li>Stronger Core: Strengthens core muscles that support the spine and other body parts.</li>
+                <li>Better Athletic Performance: Enhances body control during physical activities.</li>
+            </ul>
+        
+            <h3>Who Should Do Balance & Stability Workouts?</h3>
+            <ul>
+                <li>All Age Groups: Especially beneficial for older adults to prevent falls.</li>
+                <li>Athletes and Fitness Enthusiasts: Helps improve agility, stability, and performance.</li>
+                <li>Ages 15-20: Critical for developing body control and coordination.</li>
+                <li>Ages Above 40: Highly recommended to prevent falls and maintain mobility.</li>
+            </ul>
+        
+            <h3>Types of Balance & Stability Workouts</h3>
+            <ul>
+                <li><strong>1. Single-Leg Stand</strong></li>
+                <li><strong>2. Standing Knee Lift</strong></li>
+                <li><strong>3. Bosu Ball Squats</strong></li>
+                <li><strong>4. Bird Dog</strong></li>
+                <li><strong>5. Plank with Arm or Leg Lift</strong></li>
+                <li><strong>6. Stability Ball Rollout</strong></li>
+                <li><strong>7. Side Plank</strong></li>
+                <li><strong>8. Heel-to-Toe Walk</strong></li>
+            </ul>
+
+            <div class="workout-container">
+                <!-- Single-Leg Stand -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/onelegstand.gif' %}" alt="Single-Leg Stand" class="workout-image">
+                    <div class="workout-content">
+                        <h4>1. Single-Leg Stand</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand on one leg while keeping the other leg bent at the knee.</li>
+                            <li>Hold the position for 10-30 seconds, then switch legs.</li>
+                            <li>Focus on maintaining your balance and a straight posture.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Allowing the standing leg to lock at the knee or leaning to one side.</p>
+                        <p><strong>Key Things to Check:</strong> Engage your core, keep your shoulders relaxed, and focus on a fixed point to help maintain balance.</p>
+                        <p><strong>Specific Benefits:</strong> Improves overall balance, strengthens stabilizing muscles, and enhances proprioception.</p>
+                    </div>
+                </div>
+
+                <!-- Standing Knee Lift -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/standingknee.jpeg' %}" alt="Standing Knee Lift" class="workout-image">
+                    <div class="workout-content">
+                        <h4>2. Standing Knee Lift</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand tall and lift one knee towards your chest while balancing on the opposite leg.</li>
+                            <li>Hold for a few seconds, then lower your leg and repeat with the other knee.</li>
+                            <li>Gradually increase the height of your knee lift.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Leaning back while lifting the knee or using momentum to lift the leg.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your torso upright, engage your core, and control the movement.</p>
+                        <p><strong>Specific Benefits:</strong> Enhances balance, strengthens hip flexors and core muscles, and improves stability.</p>
+                    </div>
+                </div>
+
+                <!-- Bosu Ball Squats -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/squats.jpg' %}" alt="Bosu Ball Squats" class="workout-image">
+                    <div class="workout-content">
+                        <h4>3. Bosu Ball Squats</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand with your feet shoulder-width apart on the flat side of a Bosu ball.</li>
+                            <li>Lower your body into a squat position, ensuring your knees don’t go past your toes.</li>
+                            <li>Hold for a second, then push through your heels to return to standing.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Allowing knees to buckle inward or not maintaining balance throughout the squat.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your core engaged and back straight throughout the movement.</p>
+                        <p><strong>Specific Benefits:</strong> Improves balance, enhances strength in lower body muscles, and challenges stability.</p>
+                    </div>
+                </div>
+
+                <!-- Bird Dog -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/birddog.jpg' %}" alt="Bird Dog" class="workout-image">
+                    <div class="workout-content">
+                        <h4>4. Bird Dog</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Start on your hands and knees, ensuring your back is flat.</li>
+                            <li>Extend one arm forward and the opposite leg backward, keeping your hips level.</li>
+                            <li>Hold for a moment, then return to the starting position and switch sides.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting the lower back sag or rotating the hips excessively.</p>
+                        <p><strong>Key Things to Check:</strong> Maintain a straight line from fingertips to toes, and engage your core.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens core muscles, improves balance, and enhances coordination.</p>
+                    </div>
+                </div>
+
+                <!-- Plank with Arm or Leg Lift -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/plank.jpg' %}" alt="Plank with Arm or Leg Lift" class="workout-image">
+                    <div class="workout-content">
+                        <h4>5. Plank with Arm or Leg Lift</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Get into a plank position on your hands and toes, keeping your body straight.</li>
+                            <li>Lift one arm or one leg while maintaining stability in your core and hips.</li>
+                            <li>Hold for a few seconds, then switch to the other arm or leg.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Allowing hips to drop or rotating the torso during the lift.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your body in a straight line, and engage your core throughout.</p>
+                        <p><strong>Specific Benefits:</strong> Enhances core strength, improves overall stability, and promotes better posture.</p>
+                    </div>
+                </div>
+
+                <!-- Stability Ball Rollout -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/stabilityball.jpg' %}" alt="Stability Ball Rollout" class="workout-image">
+                    <div class="workout-content">
+                        <h4>6. Stability Ball Rollout</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Kneel on the ground with a stability ball in front of you.</li>
+                            <li>Place your forearms on the ball and roll it forward while keeping your core engaged.</li>
+                            <li>Roll out until you feel a stretch, then pull back to the starting position.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting your lower back sag or rolling too far out without control.</p>
+                        <p><strong>Key Things to Check:</strong> Maintain a neutral spine and control the movement throughout.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens core muscles, improves stability, and enhances overall body control.</p>
+                    </div>
+                </div>
+
+                <!-- Side Plank -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/sideplank.jpg' %}" alt="Side Plank" class="workout-image">
+                    <div class="workout-content">
+                        <h4>7. Side Plank</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Lie on your side and prop yourself up on one elbow, keeping your body in a straight line.</li>
+                            <li>Lift your hips off the ground and hold the position for 10-30 seconds.</li>
+                            <li>Switch sides and repeat.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting your hips sag or not maintaining a straight line.</p>
+                        <p><strong>Key Things to Check:</strong> Engage your core and keep your shoulders aligned with your hips.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens obliques, enhances core stability, and improves overall balance.</p>
+                    </div>
+                </div>
+
+                <!-- Heel-to-Toe Walk -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/heeltotoe.jpg' %}" alt="Heel-to-Toe Walk" class="workout-image">
+                    <div class="workout-content">
+                        <h4>8. Heel-to-Toe Walk</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Walk in a straight line, placing the heel of one foot directly in front of the toes of the other.</li>
+                            <li>Focus on maintaining balance as you walk, and try not to look down.</li>
+                            <li>Walk for 10-15 steps, then turn around and repeat.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Looking down, which can cause loss of balance, or not placing the feet correctly.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your core engaged and take slow, controlled steps.</p>
+                        <p><strong>Specific Benefits:</strong> Improves balance and coordination, enhances stability, and strengthens lower leg muscles.</p>
+                    </div>
+                </div>
+            </div>
+
+           <h3>Conclusion</h3>
+           <p>Balance exercises can help you keep your balance at any age. They can make you feel more secure. Older adults especially need balance exercises to help prevent falls. The risk of falling goes up after age 65.</p>
+
+        <section>
+            <h2>Bodyweight Workouts</h2>
+            <p>Bodyweight workouts involve exercises that use your body’s weight as resistance, making them highly effective for building strength, endurance, and flexibility without needing equipment. These exercises can be done anywhere, making them accessible and versatile.</p>
+        
+            <h3>Benefits of Bodyweight Workouts</h3>
+            <ul>
+                <li>Improved Strength: Builds muscular strength using body weight as resistance.</li>
+                <li>Enhanced Endurance: Increases stamina and endurance through repeated movements.</li>
+                <li>Improved Flexibility: Many bodyweight exercises require full-body engagement, enhancing flexibility.</li>
+                <li>No Equipment Required: Can be done anywhere, making them universally accessible.</li>
+                <li>Boosted Metabolism: Helps burn calories and build lean muscle, which increases metabolism.</li>
+            </ul>
+        
+            <h3>Who Should Do Bodyweight Workouts?</h3>
+            <ul>
+                <li>All Ages: Beneficial for people of all ages and fitness levels.</li>
+                <li>Ages 15-20: Ideal for young adults developing strength and coordination.</li>
+                <li>Above 40: Bodyweight workouts can be changed to be minimal impact, making them right for supporting muscle mass and mobility in older adults.</li>
+            </ul>
+        
+            <h3>Types of Bodyweight Workouts</h3>
+            <ul>
+                <li><strong>1. Push-Ups</strong></li>
+                <li><strong>2. Squats</strong></li>
+                <li><strong>3. Lunges</strong></li>
+                <li><strong>4. Plank</strong></li>
+                <li><strong>5. Mountain Climbers</strong></li>
+                <li><strong>6. Burpees</strong></li>
+                <li><strong>7. Glute Bridge</strong></li>
+                <li><strong>8. Tricep Dips</strong></li>
+            </ul>
+
+            <div class="workout-container">
+                <!-- Push-Ups -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/pushups.jpg' %}" alt="Push-Ups" class="workout-image">
+                    <div class="workout-content">
+                        <h4>1. Push-Ups</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Start in a plank position with your hands shoulder-width apart.</li>
+                            <li>Lower your body until your chest nearly touches the floor.</li>
+                            <li>Push yourself back up to the starting position while keeping your core engaged.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Dropping the hips or flaring out the elbows.</p>
+                        <p><strong>Key Things to Check:</strong> Keep a straight line from your head to your heels and engage your core.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens chest, shoulders, triceps, and core.</p>
+                    </div>
+                </div>
+
+                <!-- Squats -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/squats.jpg' %}" alt="Squats" class="workout-image">
+                    <div class="workout-content">
+                        <h4>2. Squats</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand with your feet shoulder-width apart.</li>
+                            <li>Bend your knees and lower your hips as if you're sitting back into a chair.</li>
+                            <li>Push through your heels to return to standing.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Allowing knees to cave inward or lifting heels off the ground.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your chest up, back straight, and knees aligned with your toes.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens legs, glutes, and core.</p>
+                    </div>
+                </div>
+
+                <!-- Lunges -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/lunges.jpg' %}" alt="Lunges" class="workout-image">
+                    <div class="workout-content">
+                        <h4>3. Lunges</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Step forward with one leg and lower your body until both knees are at 90 degrees.</li>
+                            <li>Push back up through the front heel to return to the starting position.</li>
+                            <li>Repeat on the other leg.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Allowing the front knee to move past the toes.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your chest lifted and back straight throughout the movement.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens legs, glutes, and core while improving balance.</p>
+                    </div>
+                </div>
+
+                <!-- Plank -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/plank.jpg' %}" alt="Plank" class="workout-image">
+                    <div class="workout-content">
+                        <h4>4. Plank</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Start in a forearm plank position with your body in a straight line.</li>
+                            <li>Engage your core and hold the position as long as possible without letting your hips sag.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting the hips drop or lifting them too high.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your body aligned and engage your core muscles.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens core, shoulders, and lower back.</p>
+                    </div>
+                </div>
+
+                <!-- Mountain Climbers -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/mountain_climbers.jpg'%}" alt="Mountain Climbers" class="workout-image">
+                    <div class="workout-content">
+                        <h4>5. Mountain Climbers</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Start in a plank position with your hands shoulder-width apart.</li>
+                            <li>Drive one knee towards your chest, then quickly switch to the other leg.</li>
+                            <li>Continue alternating legs at a quick pace.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting hips rise too high or not engaging the core.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your core engaged and your back flat.</p>
+                        <p><strong>Specific Benefits:</strong> Improves cardiovascular fitness and strengthens core and leg muscles.</p>
+                    </div>
+                </div>
+
+                <!-- Burpees -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/burpees.jpg' %}" alt="Burpees" class="workout-image">
+                    <div class="workout-content">
+                        <h4>6. Burpees</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>From a standing position, squat down and place your hands on the floor.</li>
+                            <li>Jump your feet back into a plank, then immediately jump them forward again.</li>
+                            <li>Explode up into a jump and repeat.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting hips sag in the plank or not jumping fully.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your core engaged and use explosive power for the jump.</p>
+                        <p><strong>Specific Benefits:</strong> Full-body workout that improves strength, cardio, and endurance.</p>
+                    </div>
+                </div>
+
+                <!-- Glute Bridge -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/glute_bridge.jpg' %}" alt="Glute Bridge" class="workout-image">
+                    <div class="workout-content">
+                        <h4>7. Glute Bridge</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Lie on your back with your knees bent and feet flat on the floor.</li>
+                            <li>Lift your hips towards the ceiling, squeezing your glutes at the top.</li>
+                            <li>Hold for a second, then lower your hips back down.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Arching the lower back or not engaging the glutes fully.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your core engaged and focus on using your glutes to lift.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens glutes, hamstrings, and core.</p>
+                    </div>
+                </div>
+
+                <!-- Tricep Dips -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/tricep_dips.jpg' %}" alt="Tricep Dips" class="workout-image">
+                    <div class="workout-content">
+                        <h4>8. Tricep Dips</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Sit on the edge of a bench or chair with your hands gripping the edge behind you.</li>
+                            <li>Slide your hips off the edge and lower your body until your elbows are at 90 degrees.</li>
+                            <li>Push through your palms to raise your body back up.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting the shoulders hunch forward or using the legs too much for support.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your elbows pointing straight back and use your triceps to lift.</p>
+                        <p><strong>Specific Benefits:</strong> Strengthens triceps, shoulders, and chest.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+           <h3>Conclusion</h3>
+           <p>Literally thousands of studies have shown that the more you move, the lower your risks for heart disease, diabetes, obesity, multiple types of cancer, joint pain, and Alzheimer's disease. Exercise can also lift your mood, reduce your stress level, and improve your sleep.</p>
+
+
+            <h2>Stretching Exercises</h2>
+            <p>Stretching exercises are essential for improving flexibility, reducing muscle tension, and enhancing overall mobility. They can be incorporated into warm-ups, cool-downs, or standalone sessions. Stretching improves blood circulation, helps in muscle recovery, and reduces the risk of injury.</p>
+            
+            <h3>Benefits of Stretching Exercises</h3>
+            <ul>
+                <li>Increased Flexibility: Enhances range of motion and flexibility in muscles and joints.</li>
+                <li>Improved Circulation: Increases blood flow to muscles, aiding in recovery.</li>
+                <li>Reduced Muscle Tension: Eases muscle stiffness and reduces soreness.</li>
+                <li>Improved Posture: Lengthens tight muscles, promoting better posture.</li>
+                <li>Stress Relief: Relaxing stretches help reduce physical and mental stress.</li>
+            </ul>
+        
+            <h3>Who Should Do Stretching Exercises?</h3>
+            <ul>
+                <li>All Ages: Beneficial for people of all ages and fitness levels.</li>
+                <li>Ages 15-20: Helps improve flexibility and prevent injuries during physical activities.</li>
+                <li>Above 40: Important for maintaining flexibility and mobility as muscles naturally tighten with age.</li>
+            </ul>
+        
+            <h3>Types of Stretching Exercises</h3>
+            <ul>
+                <li><strong>1. Hamstring Stretch</strong></li>
+                <li><strong>2. Quadriceps Stretch</strong></li>
+                <li><strong>3. Hip Flexor Stretch</strong></li>
+                <li><strong>4. Calf Stretch</strong></li>
+                <li><strong>5. Chest Stretch</strong></li>
+                
+            </ul>
+            
+            <div class="workout-container">
+                <!-- Hamstring Stretch -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/hamstring.jpg' %}" alt="Hamstring Stretch" class="workout-image">
+                    <div class="workout-content">
+                        <h4>1. Hamstring Stretch</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Sit on the ground with one leg extended and the other bent.</li>
+                            <li>Reach toward the toes of the extended leg while keeping your back straight.</li>
+                            <li>Hold the stretch for 15-30 seconds.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Rounding the back or bouncing while reaching.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your back straight and avoid locking your knee.</p>
+                        <p><strong>Specific Benefits:</strong> Increases flexibility in the hamstrings and lower back.</p>
+                    </div>
+                </div>
+            
+             
+            
+                <!-- Quadriceps Stretch -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/quadriceps.jpg' %}" alt="Quadriceps Stretch" class="workout-image">
+                    <div class="workout-content">
+                        <h4>2. Quadriceps Stretch</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand on one leg and grab your ankle behind you.</li>
+                            <li>Pull your heel towards your glutes while keeping your knees together.</li>
+                            <li>Hold the stretch for 15-30 seconds before switching legs.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Arching your back or letting the knees drift apart.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your back straight and engage your core.</p>
+                        <p><strong>Specific Benefits:</strong> Stretches the quadriceps and hip flexors.</p>
+                    </div>
+                </div>
+            
+                
+                <!-- Hip Flexor Stretch -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/hipflexor.jpg' %}" alt="Hip Flexor Stretch" class="workout-image">
+                    <div class="workout-content">
+                        <h4>3. Hip Flexor Stretch</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Start in a lunge position with one knee on the ground.</li>
+                            <li>Shift your weight forward to feel a stretch in the hip flexor of the back leg.</li>
+                            <li>Hold for 15-30 seconds and switch legs.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Letting the front knee extend past the toes.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your chest upright and hips squared.</p>
+                        <p><strong>Specific Benefits:</strong> Stretches the hip flexors and improves mobility.</p>
+                    </div>
+                </div>
+            
+                <!-- Calf Stretch -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/calf_stretch.jpg' %}" alt="Calf Stretch" class="workout-image">
+                    <div class="workout-content">
+                        <h4>4. Calf Stretch</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand facing a wall with one foot forward and one foot back.</li>
+                            <li>Press the back heel into the ground while leaning forward.</li>
+                            <li>Hold for 15-30 seconds and switch legs.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Lifting the back heel off the ground.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your back leg straight and hips level.</p>
+                        <p><strong>Specific Benefits:</strong> Stretches the calf muscles and improves ankle flexibility.</p>
+                    </div>
+                </div>
+            
+                <!-- Chest Stretch -->
+                <div class="workout-item">
+                    <img src="{% static 'm.jpg/chest_stretch.jpg' %}" alt="Chest Stretch" class="workout-image">
+                    <div class="workout-content">
+                        <h4>5. Chest Stretch</h4>
+                        <p><strong>Steps to Do It:</strong></p>
+                        <ul>
+                            <li>Stand with your arms out to the sides at shoulder height.</li>
+                            <li>Gently pull your arms back while keeping them straight.</li>
+                            <li>Hold for 15-30 seconds.</li>
+                        </ul>
+                        <p><strong>Common Mistakes:</strong> Arching the back excessively.</p>
+                        <p><strong>Key Things to Check:</strong> Keep your shoulders down and relaxed.</p>
+                        <p><strong>Specific Benefits:</strong> Opens up the chest and improves posture.</p>
+                    </div>
+                </div>
+         
+                <h3>Conclusion</h3>
+                <p>Stretching keeps the muscles flexible and healthy, and we need that flexibility to maintain a range of motion in the joints. Without it, the muscles shorten and become tight. Then, when you call on the muscles for activity, they are unable to extend all the way. That puts you at risk for joint pain, strains, and muscle damage.</p>
+                <footer class="footer">
+                    <div class="footer-container">
+                        <!-- About Section
+                        <div class="footer-about">
+                            <h3>MindCare</h3>
+                            <p>Your go-to platform for mental health and wellness. We provide personalized resources and support to help you on your journey to better mental well-being.</p>
+                        </div> -->
+                
+                        <!-- Quick Links -->
+                        <div class="footer-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                
+                        <!-- Contact Section -->
+                        <div class="footer-contact">
+                            <h3>Contact Us</h3>
+                            <p>Email: support@mindcare.com</p>
+                            <p>Phone: +123-456-7890</p>
+                            <p>Address: 123 Wellness Ave, Healthy City</p>
+                        </div>
+                
+                        <!-- Social Media Links -->
+                        <div class="social-icons">
+                            <h2>
+                                Follow us 
+                            </h2>
+                            <a href="https://www.facebook.com" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.google.com" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                                    <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 MindCare. All Rights Reserved.</p>
+                    </div>
+                </footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <link rel="stylesheet" href="{% static 'schedule.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>Schedule your day<span class="text-primary">#Timetable</span></h2>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="schedule-table">
+                    <table class="table bg-white">
+                        <thead>
+                            <tr>
+                                <th>Routine</th>
+                                <th>6 am</th>
+                                <th>9 am</th>
+                                <th>3 pm</th>
+                                <th>7 pm</th>
+                                <th>9 pm</th>
+                                <th class="actions">
+                                    <button class="button" id="add-task" onclick="openTaskForm()">Add Task</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-body">
+                            <!-- Schedule Rows for All Days -->
+                            <tr>
+                                <td class="day">Sunday</td>
+                                <td class="time-slot" id="sunday-10am"></td>
+                                <td class="time-slot" id="sunday-11am"></td>
+                                <td class="time-slot" id="sunday-03pm"></td>
+                                <td class="time-slot" id="sunday-05pm"></td>
+                                <td class="time-slot" id="sunday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Monday</td>
+                                <td class="time-slot" id="monday-10am"></td>
+                                <td class="time-slot" id="monday-11am"></td>
+                                <td class="time-slot" id="monday-03pm"></td>
+                                <td class="time-slot" id="monday-05pm"></td>
+                                <td class="time-slot" id="monday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Tuesday</td>
+                                <td class="time-slot" id="tuesday-10am"></td>
+                                <td class="time-slot" id="tuesday-11am"></td>
+                                <td class="time-slot" id="tuesday-03pm"></td>
+                                <td class="time-slot" id="tuesday-05pm"></td>
+                                <td class="time-slot" id="tuesday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Wednesday</td>
+                                <td class="time-slot" id="wednesday-10am"></td>
+                                <td class="time-slot" id="wednesday-11am"></td>
+                                <td class="time-slot" id="wednesday-03pm"></td>
+                                <td class="time-slot" id="wednesday-05pm"></td>
+                                <td class="time-slot" id="wednesday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Thursday</td>
+                                <td class="time-slot" id="thursday-10am"></td>
+                                <td class="time-slot" id="thursday-11am"></td>
+                                <td class="time-slot" id="thursday-03pm"></td>
+                                <td class="time-slot" id="thursday-05pm"></td>
+                                <td class="time-slot" id="thursday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Friday</td>
+                                <td class="time-slot" id="friday-10am"></td>
+                                <td class="time-slot" id="friday-11am"></td>
+                                <td class="time-slot" id="friday-03pm"></td>
+                                <td class="time-slot" id="friday-05pm"></td>
+                                <td class="time-slot" id="friday-07pm"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Saturday</td>
+                                <td class="time-slot" id="saturday-10am"></td>
+                                <td class="time-slot" id="saturday-11am"></td>
+                                <td class="time-slot" id="saturday-03pm"></td>
+                                <td class="time-slot" id="saturday-05pm"></td>
+                                <td class="time-slot" id="saturday-07pm"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to add task -->
+    <div id="taskModal" style="display:none;">
+        <div>
+            <label for="task-name">Task Name:</label>
+            <input type="text" id="task-name" placeholder="Enter Task Name" />
+            <label for="task-day">Day:</label>
+            <select id="task-day">
+                <option value="sunday">Sunday</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+            </select>
+            <label for="task-time">Time:</label>
+            <select id="task-time">
+                <option value="10am">06:00 AM</option>
+                <option value="11am">09:00 AM</option>
+                <option value="03pm">03:00 PM</option>
+                <option value="05pm">07:00 PM</option>
+                <option value="07pm">09:00 PM</option>
+            </select>
+            <button class="button1" onclick="saveTask()">Save Task</button>
+            <button class="button1" onclick="closeTaskForm()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function openTaskForm() {
+            document.getElementById('taskModal').style.display = 'block';
+        }
+
+        function closeTaskForm() {
+            document.getElementById('taskModal').style.display = 'none';
+        }
+
+        function saveTask() {
+            // Get task details from the form
+            const taskName = document.getElementById('task-name').value;
+            const taskDay = document.getElementById('task-day').value;
+            const taskTime = document.getElementById('task-time').value;
+
+            // Get the correct cell to add the task
+            const taskCell = document.getElementById(`${taskDay}-${taskTime}`);
+
+            // If the slot is empty, add the task
+            
+           const taskDiv = document.createElement('div');
+           taskDiv.classList.add('task-item');
+           taskDiv.innerHTML = `<h4>${taskName}</h4> <button onclick="deleteTask(this)">Delete</button>`;
+           taskCell.appendChild(taskDiv);
+
+            // Close the form after saving
+            closeTaskForm();
+        }
+        function deleteTask(button) {
+                button.parentElement.remove();
+        }
+
+
+    </script>
+</body>
+</html>

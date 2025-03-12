@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'myprofile.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>My Profile</h1>
+
+        <div class="profile-details">
+            <div class="profile-avatar">
+                <img src="{% if user.profile.avatar %}{{ user.profile.avatar.url }}{% else %}{% static 'default-avatar.png' %}{% endif %}" alt="Profile Avatar">
+            </div> 
+            <div class="profile-info">
+                <div>
+                    <div class="profile-info-names">
+                        <strong>First Name:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Last Name:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Username:</strong> 
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Email:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Mobile Number:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Gender:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Nationality:</strong>
+                    </div>
+                </div>
+                <div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.first_name }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.last_name }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.username }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.email }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.profile.mobile_number|default:"Not Provided" }}</p> <!-- New Field -->
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.profile.get_gender_display|default:"Not Specified" }}</p> <!-- New Field with Choice Display -->
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.profile.nationality|default:"Not Provided" }}</p> <!-- New Field -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="{% url 'edit_profile' %}" class="btn">Edit Profile</a>
+            <a href="" class="btn">Change Password</a>
+            <a href="{% url 'logout' %}" class="btn">Logout</a>
+        </div>
+    </div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'myprofile.css' %}">  
+</head>
+<body>
+    <div class="profile-container">
+        <h1>My Profile</h1>
+
+        <div class="profile-details">
+            <div class="profile-avatar">
+                <img src="{% if user.profile.avatar %}{{ user.profile.avatar.url }}{% else %}{% static 'default-avatar.png' %}{% endif %}" alt="Profile Avatar">
+            </div> 
+            <div class="profile-info">
+                <div>
+                    <div class="profile-info-names">
+                        <strong>FirstName:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>SecondName:</strong>
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>UserName:</strong> 
+                    </div>
+                    <div class="profile-info-names">
+                        <strong>Email:</strong>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="profile-info-elements" >
+                        <p> {{ user.first_name}}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p> {{ user.last_name }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p>{{ user.username }}</p>
+                    </div>
+                    <div class="profile-info-elements">
+                        <p> {{ user.email }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile-actions">
+            <a href="" class="btn">Edit Profile</a>
+            <a href="" class="btn">Change Password</a>
+            <a href="{% url 'logout'%}" class="btn">Logout</a>
+        </div>
+    </div>
+    <div>
+        <p>
+            Type text to add to your todo list
+        </p>
+        <input type="text" class="todo_input">
+        <button  onclick="todo()" class="js-todo-button">
+            Add
+        </button>
+        <div class="todolist_elements">
+
+        </div>
+    </div>
+    <script>
+        const todolist =[];
+        rendertodolist();
+        function rendertodolist(){
+            let pagehtml ='';
+            for(let i=0;i<todolist.length;i++){
+                const listelement =todolist[i];
+                const html = `
+                <p>
+                    ${listelement}
+                    <button onclick="
+                    todolist.splice(${i},1);
+                    rendertodolist();
+                    ">delete</button>
+                    
+                </p>`;
+                pagehtml +=html;
+                
+            }
+            const deleteall =`<button onclick="
+                                    todolist.splice(0,${todolist.length});
+                                    rendertodolist();
+                                              ">
+                               delete all</button>`;
+            if(todolist.length>1){
+                pagehtml+=deleteall;
+            }
+            
+            document.querySelector(".todolist_elements").innerHTML=pagehtml;
+        }
+        function todo(){
+            const element =document.querySelector(".todo_input");
+            const name = element.value;
+            console.log(name);
+            todolist.push(name);
+            element.value='';
+            rendertodolist();
+        }
+    </script>
+</body>
+</html> -->

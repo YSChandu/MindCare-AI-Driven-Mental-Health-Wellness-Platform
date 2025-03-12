@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    body, html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fa; /* Light background for better readability */
+    }
+
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        background-color: #fff; /* White background for the chat box */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    .messages-box {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+        border: 1px solid #d1d1d1; /* Border for better definition */
+        border-radius: 5px; /* Rounded corners */
+        background-color: #f9f9f9; /* Slightly different background */
+    }
+
+    .messages-list {
+        padding-left: 0;
+        margin: 0; /* Reset margin for lists */
+    }
+
+    .message {
+        margin-bottom: 15px;
+        list-style: none;
+    }
+
+    .message-text {
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .sent {
+        background-color: rgb(255, 195, 66); /* Sent message color */
+        align-self: flex-end;
+    }
+
+    .received {
+        background-color: #f1f0f0; /* Received message color */
+        align-self: flex-start;
+    }
+
+    .message-form {
+        display: flex;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #fff; /* White background for the input area */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    .message-input {
+        flex: 1;
+        border: 1px solid #d1d1d1; /* Border for the input */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the input */
+        padding: 10px;
+    }
+
+    .btn-send {
+        border-radius: 0 5px 5px 0; /* Rounded corners for the button */
+        border: 1px solid rgb(255, 195, 66); /* Border color to match button */
+        background-color: rgb(255, 195, 66); /* Button color */
+        color: white; /* Text color */
+    }
+
+    .btn-send:hover {
+        background-color: #505050; /* Darker shade on hover */
+    }
+    .bg-primary{
+        background-color:rgb(255, 195, 66);
+    }
+
+    .card-header {
+        background-color: rgb(255, 195, 66);
+        display: flex;
+        justify-content: space-between; /* Align items nicely */
+        align-items: center; /* Center the items vertically */
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="card flex-grow-1">
+        <div class="card-header bg-primary text-white" style="
+            background-color: rgb(255, 195, 66) !important;"
+        >
+            <h5 class="mb-0">Chat</h5>
+            {% if user.is_authenticated %}
+                <span>Welcome {{ user.username }}</span>
+                <a style="color: #505050;" href={% url 'logout' %}>Logout</a>
+            {% else %}
+                <div>
+                    <a style="color:#505050;" href="login">Login</a>
+                    <a style="color: #505050;" href="register">Register</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="card-body messages-box">
+            <ul class="list-unstyled messages-list">
+                {% for chat in chats %}
+                    <li class="message {% if chat.user == request.user %}sent{% else %}received{% endif %}">
+                        <div class="message-text">
+                            <div class="message-sender">
+                                <strong>{% if chat.user == request.user %}You{% else %}AI Chatbot{% endif %}</strong>
+                            </div>
+                            <div class="message-content">
+                                {% if chat.user == request.user %}
+                                    {{ chat.message }}
+                                {% else %}
+                                    {{ chat.response }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>            
+        </div>
+    </div>
+    <form class="message-form" aria-label="Message input form">
+        {% csrf_token %}
+        <input type="text" class="form-control message-input" placeholder="Type your message..." aria-label="Type your message">
+        <button type="submit" class="btn btn-primary btn-send">Send</button>
+    </form>
+</div>
+
+<script>
+    const messagesList = document.querySelector('.messages-list');
+    const messageForm = document.querySelector('.message-form');
+    const messageInput = document.querySelector('.message-input');
+
+    messageForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const message = messageInput.value.trim();
+        if (message.length === 0) {
+            return;
+        }
+        
+        addMessage('sent', 'You', message);
+        messageInput.value = '';
+
+        fetch('', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                'message': message
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            addMessage('received', 'AI Chatbot', data.response);
+        });
+    });
+
+    function addMessage(type, sender, content) {
+        const messageItem = document.createElement('li');
+        messageItem.classList.add('message', type);
+        messageItem.innerHTML = `
+            <div class="message-text">
+                <div class="message-sender"><strong>${sender}</strong></div>
+                <div class="message-content">${content}</div>
+            </div>`;
+        messagesList.appendChild(messageItem);
+        messagesList.scrollTop = messagesList.scrollHeight; // Scroll to the bottom
+    }
+</script>
+{% endblock %}
