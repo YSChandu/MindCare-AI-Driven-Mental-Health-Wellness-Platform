@@ -127,9 +127,6 @@ def logout(request):
     return redirect('login')
 
 def login(request):
-    """
-    Custom login view with chat history clearing
-    """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
