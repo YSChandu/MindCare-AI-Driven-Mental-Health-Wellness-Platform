@@ -13,59 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'home.css' %}">
-    <style>
-        /* Animation styles */
-        .card-carousel {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .card-slider {
-            display: flex;
-            position: relative;
-            transition: transform 0.5s ease;
-        }
-        
-        .health-card {
-            flex: 0 0 auto;
-            width: calc(20% - 20px);
-            margin-right: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            transition: transform 0.3s ease;
-        }
-        
-        .health-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        @media (max-width: 1200px) {
-            .health-card {
-                width: calc(25% - 20px);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .health-card {
-                width: calc(33.33% - 20px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .health-card {
-                width: calc(50% - 20px);
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .health-card {
-                width: calc(100% - 20px);
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
