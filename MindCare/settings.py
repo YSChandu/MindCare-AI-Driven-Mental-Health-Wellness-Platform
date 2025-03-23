@@ -21,7 +21,7 @@ SECRET_KEY = 'django-insecure-r&glp(tc0=7u_)fret-hrw6r4=(hv&9hmeom$43vyw6=r1*#wa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','mindcare-ai-driven-mental-health.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -65,7 +65,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MindCare.wsgi.application'
 
-# Database Configuration
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
