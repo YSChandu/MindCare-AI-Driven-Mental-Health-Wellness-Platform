@@ -17,35 +17,42 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">
+            <div class="Title">
                 <h1>MindCare</h1>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'issues' %}">Mental Health Issues</a></li>
-                    <li><a href="resources">Well-being</a></li>
-                    <li><a href="schedules">Schedules</a></li>
-                    <li><a href="aboutus">Aboutus</a></li>
-                </ul>
-            </nav>
-            
-            <div class="profile"></div>
-                {% if user.is_authenticated%}
-                <button class="profile-btn" id="profileBtn">Profile</button>
-                <div class="dropdown-content" id="dropdown">
-                    <a href='profile'>My Profile</a>
-                    <a href="#">Schedule</a>
-                    <a href='logout'>Logout</a>
+            <div class="bar">
+                <div>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'issues' %}">Mental Health Issues</a></li>
+                            <li><a href="resources">Well-being</a></li>
+                            <li><a href="schedules">Schedules</a></li>
+                            <li><a href="aboutus">Aboutus</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                {%else%}
-                <a class="profile-btn" href={% url 'login' %}>Login</a>
-                {% endif%}
+                <div>
+                    {% if user.is_authenticated%}
+                    <div id="hamburger_icon">
+                    <img class="hamburger_icon1" src="{% static 'm.jpg/hamburger_icon.jpeg'%}">
+                    <div>
+                    <div class="dropdown-content" id="dropdown">
+                        <a href='profile'>My Profile</a>
+                        <a href="#">Schedule</a>
+                        <a href='logout'>Logout</a>
+                    </div>
+                    {%else%}
+                    <div class="login">
+                    <a class="login-btn" href={% url 'login' %}>Login</a>
+                    <div>
+                    {% endif%}
+                </div>
             </div>
         </div>
     </header>
     <section class="hero">
-        <div>
+        <div class="hero-image">
             <img class ="homepage-image" src="{% static 'm.jpg/home pic.jpeg' %}" >
         </div>
         <div class="hero-content">
@@ -70,53 +77,46 @@
 
     <section id="articles" class="articles-section">
         <h2>Featured Articles</h2>
+        <hr>
         <div class="article-list">
             <article class="article-card">
                 <div class="article-image">
-                    <img src="{% static 'm.jpg/download.jpg' %}" alt="Anxiety" class="article-graphic">
+                    <img src="{% static 'm.jpg/download.jpg' %}" alt="Anxiety" class="article-image">
                 </div>
                 <div class="article-content">
                     <h3>Understanding Anxiety</h3>
                     <p>
                         Anxiety is a feeling of fear, dread, and uneasiness that can be caused by the anticipation of danger. 
                         It can be a normal reaction to stress, like when you're faced with a difficult problem at work or before taking a test.
-                        <span class="more-text"> However, anxiety disorders involve excessive worry or fear that affects daily life. Understanding its causes and symptoms is key to managing it effectively.
-                            <a href="https://magazine.medlineplus.gov/topic/anxiety/" class="inline-link">Medlineplus - Know more in this article</a>.
-                        </span>
-                        <span class="read-more-link">Read more</span>
                     </p>
+                    <a href="https://magazine.medlineplus.gov/topic/anxiety/" class="read-more-link">Read more</a>
                 </div>
             </article>
             <article class="article-card">
                 <div class="article-image">
-                    <img src="{% static 'm.jpg/deperssion.jpg' %}" alt="Depression" class="article-graphic">
+                    <img src="{% static 'm.jpg/deperssion.jpg' %}" alt="Depression" class="article-image">
                 </div>
                 <div class="article-content">
                     <h3>Managing Depression</h3>
                     <p>
                         Depression is a low mood that lasts for a long time, affecting everyday life. It is often triggered by a mix of genetic, psychological and environmental factors; studies show that the risk of becoming depressed can be increased by life events such as 
-                        <span class="more-text"> poverty, death of a loved one, physical illness or abuse. For some, the risk is also hereditary.
-                            Depression can be treated with a combination of psychotherapy, medication, and other approaches. Lifestyle changes, such as regular exercise, healthy eating, and stress reduction, can also play a significant role in recovery. Support from family and friends is invaluable.
-                            <a href = "https://www.news-medical.net/health/Genes-and-Depression.aspx" class = "inline-link">Medical.net - Know more in this article</a>
-                        </span>
-                        <span class="read-more-link">Read more</span>
+                        poverty, death of a loved one, physical illness or abuse. For some, the risk is also hereditary.
                     </p>
+                    <a href = "https://www.news-medical.net/health/Genes-and-Depression.aspx" class="read-more-link">Read more</a>
+                   
                 </div>
             </article>
             <article class="article-card">
                 <div class="article-image">
-                    <img src="{% static 'm.jpg/mindfulness.jpg' %}" alt="Mindfulness" class="article-graphic">
+                    <img src="{% static 'm.jpg/mindfulness.jpg' %}" alt="Mindfulness" class="article-image">
                 </div>
                 <div class="article-content">
                     <h3>Mindfulness Techniques</h3>
                     <p>
-                        Mindfulness is a type of meditation in which you focus on being intensely aware of what you're sensing and feeling in the moment.
-                        <span class="more-text"> People who practice mindfulness say it fundamentally changes how they experience life. For the past 40 years, researchers have been attempting to explain this in biological terms. Studies reveal that mindfulness may reduce anxiety and depression, boost your immune system, help you manage pain, allow you to unhook from unhealthy habits and addictions, soothe insomnia, reduce high blood pressure, and even change the structure and function of your brain in positive ways—perhaps in as little as 8 weeks of practice. It has been shown to reduce stress, improve mental clarity, and promote overall well-being. Techniques like deep breathing and guided imagery are often used.
-                        <a href = "https://www.mindful.org/the-science-of-mindfulness/" class = "inline-link">Minfulness - Know more in this article</a>
-                        
-                        </span>
-                        <span class="read-more-link">Read more</span>
+                        Mindfulness is a type of meditation in which you focus on being intensely aware of what you're sensing and 
+                        feeling in the moment. 
                     </p>
+                    <a href = "https://www.mindful.org/the-science-of-mindfulness/" class="read-more-link">Read more</a>
                 </div>
             </article>
         </div>
@@ -129,36 +129,16 @@
         <hr>
     </div>
     </section>
-    <section style="background-color:rgb(250, 250, 250);">
-        <div style="
-            display: flex;
-            justify-content: space-around;
-            ">
+    <section class="section-checkout">
+        <div class="checkout">
             <div>
-                <img style="margin-right: 50px;" src={% static 'm.jpg/bot2.gif'%}> 
+                <img class="checkout-img" src={% static 'm.jpg/chatbot4.gif'%}> 
             </div>
-            <div style="display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            ">
-                <div style="
-                width:400px;
-                ">
+            <div class="checkout-content">
                     <h2>Wanna try our new AI Chatbot ???</h2>
-                </div>
-                <div >
-                
-                    <button 
-                    onclick="window.location.href='{% url 'chatbot' %}';"
-                    class="profile-btn" 
-                    style="
-                    padding: 10px 20px; 
-                    font-size: 16px; 
-                    cursor: pointer;">
+                    <button onclick="window.location.href='{% url 'chatbot' %}';" class="login-btn">
                         Click here
                     </button>
-                </div>
             </div>
         </div>
     </section>
@@ -170,12 +150,12 @@
                     <h2>Mental Health Issues</h2> 
                 </div>
                 <div>
-                    <a class="see-all-link" onclick="navigatetoissues()">See All</a>
+                    <a class="see-all-link" onclick="navigatetoissues();">See All</a>
                 </div>
             </div>
-            <div class="card-carousel">
-                <div class="card-slider mental-health-slider">
-                    <article class="health-card" onclick="navigateToMood();">
+            <div class="card-slider">
+                <div class="card-carousel" id="hc">
+                    <div class="health-card health-card-1"  onclick="navigateToMood();">
                         <div>
                             <img src="{% static 'm.jpg/mood.png' %}" alt="Mood Disorders" class="health-image">
                         </div>
@@ -183,8 +163,8 @@
                             <h3>Mood Disorders</h3>
                             <p>Mood disorders primarily affect a person's emotional state, often resulting in periods of extreme sadness or mood elevation.</p>
                         </div>
-                    </article>
-                    <article class="health-card" onclick="navigateToOCD();" >
+                    </div>
+                    <div class="health-card health-card-2" onclick="navigateToOCD();">
                         <div>
                             <img src="{% static 'm.jpg/Ocd.png' %}" alt="OCD" class="health-image">
                         </div>
@@ -192,8 +172,8 @@
                             <h3>OCD</h3>
                             <p>These disorders involve intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions).</p>
                         </div>
-                    </article>
-                    <article class="health-card" onclick="navigateToTrauma();">
+                    </div>
+                    <div class="health-card health-card-3" onclick="navigateToTrauma();">
                         <div>
                             <img src="{% static 'm.jpg/trauma.png' %}" alt="Stress and Trauma" class="health-image">
                         </div>
@@ -201,8 +181,8 @@
                             <h3>Stress and Trauma</h3>
                             <p>These disorders develop after exposure to a traumatic or stressful event.</p>
                         </div>
-                    </article>
-                    <article class="health-card" onclick="navigateToPersonality();">
+                    </div>
+                    <div class="health-card health-card-4" onclick="navigateToPersonality();">
                         <div>
                             <img src="{% static 'm.jpg/personality.png' %}" alt="Personality Disorders" class="health-image">
                         </div>
@@ -210,18 +190,63 @@
                             <h3>Personality Disorders</h3>
                             <p>These disorders involve enduring patterns of behavior, cognition, and inner experience that deviate from cultural expectations.</p>
                         </div>
-                    </article>
-                    <article class="health-card" onclick="navigateToDissociative();">
+                    </div>
+                    <div class="health-card health-card-5" onclick="navigateToDissociative();">
                         <img src="{% static 'm.jpg/disso.png' %}" alt="Dissociative Disorders" class="health-image">
                         <div class="health-content">
                             <h3>Dissociative Disorders</h3>
                             <p>Dissociative disorders involve disruptions or breakdowns in memory, awareness, identity, or perception.</p>
                         </div>
-                    </article>
+                    </div>
+                    <div class="health-card health-card-6"  onclick="navigateToMood();">
+                        <div>
+                            <img src="{% static 'm.jpg/mood.png' %}" alt="Mood Disorders" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Mood Disorders</h3>
+                            <p>Mood disorders primarily affect a person's emotional state, often resulting in periods of extreme sadness or mood elevation.</p>
+                        </div>
+                    </div>
+                    <div class="health-card health-card-7" onclick="navigateToOCD();">
+                        <div>
+                            <img src="{% static 'm.jpg/Ocd.png' %}" alt="OCD" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>OCD</h3>
+                            <p>These disorders involve intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions).</p>
+                        </div>
+                    </div>
+                    <div class="health-card health-card-8" onclick="navigateToTrauma();">
+                        <div>
+                            <img src="{% static 'm.jpg/trauma.png' %}" alt="Stress and Trauma" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Stress and Trauma</h3>
+                            <p>These disorders develop after exposure to a traumatic or stressful event.</p>
+                        </div>
+                    </div>
+                    <div class="health-card health-card-9" onclick="navigateToPersonality();">
+                        <div>
+                            <img src="{% static 'm.jpg/personality.png' %}" alt="Personality Disorders" class="health-image">
+                        </div>
+                        <div class="health-content">
+                            <h3>Personality Disorders</h3>
+                            <p>These disorders involve enduring patterns of behavior, cognition, and inner experience that deviate from cultural expectations.</p>
+                        </div>
+                    </div>
+                    <div class="health-card health-card-10" id="dd" onclick="navigateToDissociative();">
+                        <img src="{% static 'm.jpg/disso.png' %}" alt="Dissociative Disorders" class="health-image">
+                        <div class="health-content">
+                            <h3>Dissociative Disorders</h3>
+                            <p>Dissociative disorders involve disruptions or breakdowns in memory, awareness, identity, or perception.</p>
+                        </div>
+                    </div>
+                   
                 </div>
             </div>
         </div>
     </section>
+    
     
     <section id="self-care" class="self-care-section">
         <div class="container">
@@ -233,43 +258,79 @@
                     <a style="cursor:pointer;" class="see-all-link" onclick="navigatetoselfcare();">See all</a>
                 </div>
             </div>
-            <div class="card-carousel">
-                <div class="card-slider self-care-slider">
-                    <article class="health-card" onclick="navigatetoexercise();">
+            <div class="card-slider">
+                <div class="card-carousel">
+                    <article class="health-card health-card-1"  onclick="navigatetoexercise();">
                         <img src="{% static 'm.jpg/exercise3.jpeg' %}" alt="Workouts" class="health-image">
                         <div class="health-content" >
                             <h3>Workouts</h3>
                             <p>Relieve stress and anxiety with curated workout routines for a healthy body and mind.</p>
                         </div>
                     </article>
-                    <article class="health-card" onclick="navigatetoyoga();">
+                    <article class="health-card health-card-2" onclick="navigatetoyoga();">
                         <img src="{% static 'm.jpg/yoga2.jpeg' %}" alt="Yoga" class="health-image">
                         <div class="health-content" >
                             <h3>Yoga</h3>
                             <p>A practice that connects the body, breath, and mind. It uses physical postures, breathing exercises, and meditation to improve overall health.</p>
                         </div>
                     </article>
-                    <article class="health-card" onclick="navigatetomusic();">
+                    <article class="health-card health-card-3" onclick="navigatetomusic();">
                         <img src="{% static 'm.jpg/music.jpeg' %}" alt="Music" class="health-image">
                         <div class="health-content">
                             <h3>Music</h3>
                             <p>Discover music and podcasts designed to soothe your mind and elevate your mood.</p>
                         </div>
                     </article>
-                    <article class="health-card" onclick="navigatetobreathing();">
+                    <article class="health-card health-card-4" onclick="navigatetobreathing();">
                         <img src="{% static 'm.jpg/breathing.jpeg.jpg' %}" alt="Breathing Exercises" class="health-image">
                         <div class="health-content" >
                             <h3>Breathing Exercises</h3>
                             <p> Breathing technique offers several benefits to your body including reducing your blood pressure and heart rate and improving relaxation.</p>
                         </div>
                     </article>
-                    <article class="health-card" onclick="navigatetomovies();">
+                    <article class="health-card health-card-5" onclick="navigatetomovies();">
                         <img src="{% static 'm.jpg/movies.jpeg' %}" alt="Movies" class="health-image">
                         <div class="health-content" >
                             <h3>Movies</h3>
                             <p>Wanna see some awesome movies related to mental health .</p>
                         </div>
                     </article>
+
+                        <article class="health-card health-card-6"  onclick="navigatetoexercise();">
+                            <img src="{% static 'm.jpg/exercise3.jpeg' %}" alt="Workouts" class="health-image">
+                            <div class="health-content" >
+                                <h3>Workouts</h3>
+                                <p>Relieve stress and anxiety with curated workout routines for a healthy body and mind.</p>
+                            </div>
+                        </article>
+                        <article class="health-card health-card-7" onclick="navigatetoyoga();">
+                            <img src="{% static 'm.jpg/yoga2.jpeg' %}" alt="Yoga" class="health-image">
+                            <div class="health-content" >
+                                <h3>Yoga</h3>
+                                <p>A practice that connects the body, breath, and mind. It uses physical postures, breathing exercises, and meditation to improve overall health.</p>
+                            </div>
+                        </article>
+                        <article class="health-card health-card-8" onclick="navigatetomusic();">
+                            <img src="{% static 'm.jpg/music.jpeg' %}" alt="Music" class="health-image">
+                            <div class="health-content">
+                                <h3>Music</h3>
+                                <p>Discover music and podcasts designed to soothe your mind and elevate your mood.</p>
+                            </div>
+                        </article>
+                        <article class="health-card health-card-9" onclick="navigatetobreathing();">
+                            <img src="{% static 'm.jpg/breathing.jpeg.jpg' %}" alt="Breathing Exercises" class="health-image">
+                            <div class="health-content" >
+                                <h3>Breathing Exercises</h3>
+                                <p> Breathing technique offers several benefits to your body including reducing your blood pressure and heart rate and improving relaxation.</p>
+                            </div>
+                        </article>
+                        <article class="health-card health-card-10" onclick="navigatetomovies();">
+                            <img src="{% static 'm.jpg/movies.jpeg' %}" alt="Movies" class="health-image">
+                            <div class="health-content" >
+                                <h3>Movies</h3>
+                                <p>Wanna see some awesome movies related to mental health .</p>
+                            </div>
+                       </article>
                 </div>
             </div>
         </div>
@@ -343,169 +404,45 @@
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const profileBtn = document.getElementById("profileBtn");
+        document.addEventListener("DOMContentLoaded", function () {
+            //  Dropdown Toggle
+            const profileBtn = document.getElementById("hamburger_icon");
             const dropdown = document.getElementById("dropdown");
-            
-            // Check if elements exist before adding event listeners
+        
             if (profileBtn && dropdown) {
-                profileBtn.addEventListener("click", function() {
+                profileBtn.addEventListener("click", function () {
                     dropdown.classList.toggle("show");
                 });
-            
-                window.addEventListener("click", function(event) {
-                    if (!event.target.matches('.profile-btn')) {
-                        if (dropdown.classList.contains('show')) {
-                            dropdown.classList.remove('show');
-                        }
+        
+                window.addEventListener("click", function (event) {
+                    if (!event.target.closest("#hamburger_icon")) {
+                        dropdown.classList.remove("show");
                     }
                 });
             }
             
-           
-            if (document.querySelector('.mental-health-slider')) {
-                animateCards('.mental-health-slider');
+            //  Navigation Functions
+            function navigateToPage(selector) {
+                const loc = document.querySelector(`a[href*="${selector}"]`)?.href || "#";
+                window.location.href = loc;
             }
-            
-           
-            if (document.querySelector('.self-care-slider')) {
-                animateCards('.self-care-slider');
-            }
-            
-           
-            function animateCards(sliderClass) {
-                const slider = document.querySelector(sliderClass);
-                if (!slider) return; // Exit if slider not found
-                
-                const cards = slider.querySelectorAll('.health-card');
-                if (cards.length === 0) return; // Exit if no cards
-                
-                const totalCards = cards.length;
-                
-                // Clone cards to create continuous effect
-                cards.forEach(card => {
-                    const clone = card.cloneNode(true);
-                    slider.appendChild(clone);
-                });
-                
-                // Set initial position
-                let position = 0;
-                const cardWidth = cards[0].offsetWidth + 40; // 20px is the margin
-                const totalWidth = cardWidth * totalCards;
-                
-                let animationId;
-                
-                function moveSlider() {
-                    position -= 0.5; // Speed of movement (pixels per frame)
-                    
-                    // Reset position when all original cards are out of view
-                    if (position <= -totalWidth) {
-                        position = 0;
-                    }
-                    
-                    slider.style.transform = `translateX(${position}px)`;
-                    animationId = requestAnimationFrame(moveSlider);
-                }
-                
-                // Start animation
-                moveSlider();
-                
-                // Pause animation when tab is not visible
-                document.addEventListener('visibilitychange', function() {
-                    if (document.hidden) {
-                        cancelAnimationFrame(animationId);
-                    } else {
-                        moveSlider();
-                    }
-                });
-            }
-            
-            // Add event listeners to read-more links
-            document.querySelectorAll('.read-more-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent default link behavior
-                    const moreText = link.previousElementSibling;
-                    if (moreText && moreText.style) {
-                        if (moreText.style.display === "inline") {
-                            moreText.style.display = "none";
-                            link.textContent = "Read more";
-                        } else {
-                            moreText.style.display = "inline";
-                            link.textContent = "Read less";
-                        }
-                    }
-                });
-            });
-            
-            // Progress bar scroll tracking
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                if (height > 0) { // Prevent division by zero
-                    const scrolled = (winScroll / height) * 100;
-                    document.body.style.setProperty('--scroll-width', `${scrolled}%`);
-                }
-            });
-            
-            // Hamburger menu
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".navbar ul");
-            
-            if (hamburger && navMenu) {
-                hamburger.addEventListener("click", function () {
-                    navMenu.classList.toggle("show-nav");
-                });
-            }
+        
+            window.navigateToMood = () => navigateToPage("mood_issue");
+            window.navigateToOCD = () => navigateToPage("OCD");
+            window.navigateToTrauma = () => navigateToPage("trauma");
+            window.navigateToPersonality = () => navigateToPage("personality_issue");
+            window.navigateToDissociative = () => navigateToPage("dissociative");
+            window.navigatetoyoga = () => navigateToPage("yoga");
+            window.navigatetomusic = () => navigateToPage("music");
+            window.navigatetomovies = () => navigateToPage("movies");
+            window.navigatetoexercise = () => navigateToPage("workout");
+            window.navigatetobreathing = () => navigateToPage("breathing");
+            window.navigatetoselfhelpbooks = () => navigateToPage("selfhelpbooks");
+            window.navigatetoselfcare = () => (window.location.href = "resources");
+            window.navigatetoissues = () => navigateToPage("issues");
         });
-    
-        // Navigation functions
-        function navigateToMood() {
-            window.location.href = document.querySelector('a[href*="mood_issue"]')?.href || "#";
-        }
-        function navigateToOCD() {
-            window.location.href = document.querySelector('a[href*="OCD"]')?.href || "#";
-        }
-        function navigateToTrauma() {
-            window.location.href = document.querySelector('a[href*="trauma"]')?.href || "#";
-        }
-        function navigateToPersonality() {
-            window.location.href = document.querySelector('a[href*="personality_issue"]')?.href || "#";
-        }
-        function navigateToDissociative() {
-            window.location.href = document.querySelector('a[href*="dissociative"]')?.href || "#";
-        }
-        function navigatetoyoga() {
-            const loc = document.querySelector('a[href*="yoga"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetomusic() {
-            const loc = document.querySelector('a[href*="music"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetomovies() {
-            const loc = document.querySelector('a[href*="movies"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetoexercise() {
-            const loc = document.querySelector('a[href*="workout"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetobreathing() {
-            const loc = document.querySelector('a[href*="breathing"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetoselfhelpbooks() {
-            const loc = document.querySelector('a[href*="selfhelpbooks"]')?.href || "#";
-            window.location.href = loc;
-        }
-        function navigatetoselfcare() {
-            const loc = 'resources';
-            window.location.href = loc;
-        }
-        function navigatetoissues() {
-            const loc = document.querySelector('a[href*="issues"]')?.href || "#";
-            window.location.href = loc;
-        }
+
+        
     </script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 * {
     padding: 0;
-    max-width: 1200;
     box-sizing: border-box;
 }
 
@@ -18,7 +17,6 @@ body {
     margin-top: 0px;
 }
 
-
 header {
     background-color: #ffffff;
     display: flex;
@@ -32,20 +30,25 @@ header {
 }
 
 .header-container {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1550px;
-    margin-right: 90px;
+    width:100%;
 }
 
+.bar{
+    display: flex;
+    gap:50px;
+    margin-right: 100px;
+}
 
-.logo h1 {
+.Title h1 {
     font-size: 24px;
     font-weight: bold;
 }
 
-/* Navbar */ 
+
 .navbar ul {
     display: flex;
     list-style: none;
@@ -70,13 +73,20 @@ header {
     font-weight: 700;
 }
 
-/* Profile Section */
-.profile {
-    position: relative;
-    display: inline-block;
+.hamburger_icon1{
+    margin-top: 16px;
+    height: 20px;
+    cursor: pointer;
+    opacity:0.5;
 }
 
-.profile-btn {
+.login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn {
     background-color: rgb(255, 195, 66);
     color: #505050;
     font-weight: 800;
@@ -85,15 +95,15 @@ header {
     cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
-    margin-right: 50px;
+    margin-top: 5px;
+    margin-right: 70px;
 }
 
-.profile-btn:hover {
+.login:hover {
     background-color: #505050;
     color: #ffffff;
 }
 
-/* Dropdown menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -119,68 +129,56 @@ header {
 
 .show {
     display: block;
-    margin-right: 100px;
-    margin-top: 150px;
-}
-
-
-
-/* Hamburger Menu (Hidden on Desktop) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    padding: 10px;
-}
-
-.hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
+    margin-right: 60px;
+    margin-top: 15px;
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    body{
+        margin:0 ;
+        width:100%;
+    }
+    .Title h1 {
+        font-size: 34px;
+    }
+    
+    .header-container{
+        flex-direction:column;
+    }
+    .hamburger_icon1{
+        margin-top: 25px;
+        margin-right: 50px;
+        height: 10px;
+    }
+    .bar{
+        gap:20px;
+        margin-right: 0px;
+        margin-left: 5px;
+    }
     .navbar ul {
-        display: none; /* Hide the navigation */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar ul li {
-        padding: 15px 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .navbar ul li:last-child {
-        border-bottom: none;
-    }
-
-    .navbar ul.show-nav {
-        display: flex; /* Show menu when activated */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon */
-    }
-}
-
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
+        display: flex;
+        list-style: none;
         gap: 10px;
     }
+    .navbar ul li a {
+        color: rgb(51, 51, 51);
+        text-decoration: none;
+        font-size: 10px;
+        padding: 5px;
+    }
+    .login-btn{
+      margin-top: 16px;
+      margin-right:35px; 
+    }
+    .show {
+        display: block;
+        margin-right: 10px;
+        margin-top:50px;
+    }
 }
 
+/* hero image and content styles */
 
 .hero {
     margin-top: 50px;
@@ -209,11 +207,13 @@ header {
     justify-content: center;
     
 }
+
 .hero-element-welcome{
     font-size: 30px;
     font-family: 'Handlee',cursive;
     letter-spacing: 4px;
 }
+
 .hero-element-welcome h1{
     font-size: 20px;
     margin-bottom: 0px;
@@ -237,83 +237,54 @@ header {
     color: #505050;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 @media (max-width: 768px) {
-    .hero {
-
-        flex-direction: column; /* Stack items vertically */
-        height: auto; /* Adjust height dynamically */
+    .hero{
+        margin-top: 170px;
+        flex-direction: column;
+        gap:20px;
+        width:400px;
+        justify-items: center;
         align-items: center;
-        text-align: center;
-        margin-top: 200px;
     }
-
-    .homepage-image {
-        margin-left: 0px;
-        width: 80%; /* Adjust image width */
-        max-width: 300px; /* Set max width */
+    .hero-content{
+        font-size: 10px;
     }
+    .homepage-image{
+        width:100%;
 
-    .hero-content {
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
     }
-
-    .hero-element-welcome {
-        font-size: 24px;
-        letter-spacing: 2px;
+    .hero-image{
+        display:flex;
+        justify-items: center;
+        align-items: center;
+        width:100%;
+        margin-right: 30px;
     }
-
-    .hero-element-welcome h1 {
-        font-size: 16px;
+    .hero-content{
+        margin-left: 0;
+        margin-right:0;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
-
-    .hero-elements {
-        font-size: 18px;
-        margin-bottom: 10px;
+    .hero-element-welcome{
+        font-size: 10px;
+        font-family: 'Handlee',cursive;
+        letter-spacing: 4px;
     }
-
-    .hero-element a {
-        font-size: 16px;
-    }
-
-    .hero-element a:hover {
-        transform: scale(1.2);
+    .hero-elements p{
+         padding-left: 10px;
     }
 }
 
-
-/* Image Section */
-.image-section {
-    padding: 20px 0;
-}
-
-.main-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-/* Articles Section */
+/* Articles styles Section */
 .articles-section {
     padding: 40px 20px;
     background-color: #ffffff;
 }
 
 .article-list {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -328,7 +299,7 @@ header {
     border-radius: 8px;
 }
 
-.article-graphic {
+.article-image {
     width: 250px;
     height: 250px;
     margin-right: 20px;
@@ -354,33 +325,94 @@ header {
     color: #666;
     margin-bottom: 10px;
 }
-.more-text {
-    display: none;
-    transition: all 0.3s ease;
-}
+
 
 .read-more-link {
     color: #1e2e3f;
     cursor: pointer;
     font-weight: bold;
+    font-size:20px;
     text-decoration: underline;
 }
 
 .read-more-link:hover {
     color: #1a1d20;
 }
-/* General Styling */
-.Recommend {
-    padding-bottom: 50px;
+
+@media (max-width: 768px) {
+
+    .article-card{
+        flex-direction: column;
+        width: 100%;
+        gap:20px;
+    }
+    .article-content h3 {
+        font-size: 15px;
+    }
+    .article-content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+
+/* recommend section styles*/
+
+.section-checkout{
+    margin-top: 50px;
 }
 
-/* Section Headers */
+.checkout{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100vw;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.checkout-img{
+    width: 35vw;
+}
+
+.checkout-content{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+
+@media (max-width: 768px) {
+    .Recommendation hr {
+        display: none;
+    }
+    .section-checkout{
+        margin-bottom: 40px;
+    }
+    .checkout{
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .checkout-img{
+        width: 300px;
+    }
+    .checkout-content h2 {
+        font-size: 10px;
+    }
+    .checkout-content .login-btn{
+        font-size: 10px;
+    }
+
+}
+
+
+
+/* Section Headers styles */
+
+
+
+
 .mental-health-header,
 .self-care-header {
     display: flex;
@@ -409,117 +441,84 @@ header {
     text-decoration: underline;
 }
 
-/* Card Carousel */
 .card-carousel {
-    overflow: hidden;
+    display: flex; 
     position: relative;
-    padding-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-}
-
-.card-slider {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px;
-}
-
-/* Hide scrollbar */
-.card-slider::-webkit-scrollbar {
-    display: none;
-}
-
-/* Health Cards */
-.health-card {
-    flex: 0 0 auto;
-    width: 75px; /* Set width to 75px */
-    height: 75px; /* Set height to 75px */
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
+    width: 100%; 
+    max-width: 1536px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    height: 350px;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.health-card:hover {
     cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Images inside cards */
-.health-image {
-    width: 75px; /* Set width to 75px */
-    height: 75px; /* Set height to 75px */
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
+.health-card {
+    width: 300px;
+    height: 350px;
+    border-radius: 6px;
+    border-color:#1e2e3f;
+    border-width: 4px;
+    position : absolute;
+    left:100%;
+    animation-name:scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running; 
 }
 
-/* Card Content */
-.health-content {
-    padding: 10px;
-    text-align: center;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .card-slider {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-    }
-
     .health-card {
-        width: 220px;
+        width: 300;
+        height: 350; /* Make cards responsive on smaller screens */
+        margin-right: 2px; /* Adjust margin as needed */
+        position: relative; /* Ensure it's positioned correctly */
+        animation-duration: 30s; /* Keep the same animation duration */
     }
 }
 
-@media (max-width: 480px) {
-    .mental-health-header,
-    .self-care-header {
-        flex-direction: column;
-        text-align: center;
-    }
+.card-carousel:hover .health-card {
+    animation-play-state: paused !important;
+}
 
-    .see-all-link {
-        margin-top: 10px;
+@keyframes scroll {
+    from{
+        left:100%;
     }
-
-    .health-card {
-        width: 200px;
+    to{
+        left:-200%;
     }
 }
 
-.see-all-link {
-    margin-top: 5px;
-    color: #505050;
-    text-decoration: none;
-    font-weight: bold;
+/* Stagger animations manually */
+.health-card-1 { animation-delay: 0; }
+.health-card-2 { animation-delay: 3s; }
+.health-card-3 { animation-delay: 6s; }
+.health-card-4 { animation-delay: 9s; }
+.health-card-5 { animation-delay: 12s; }
+.health-card-6 { animation-delay: 15s; }
+.health-card-7 { animation-delay: 18s; }
+.health-card-8 { animation-delay: 21s; }
+.health-card-9 { animation-delay: 24s; }
+.health-card-10 { animation-delay:27s; }
+
+.health-image {
+    width: 100%;
+    height: 175px;
+    object-fit:cover;
+    border-radius: 6px;
 }
 
-.see-all-link:hover {
-    text-decoration: underline; 
-    color:rgb(255, 195, 66);
-
+.health-content h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
 }
 
-.nutrition-list {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+.health-content p {
+    font-size: 14px;
+    color: #666;
 }
-
-.nutrition-track {
-    display: flex;
-    gap: 20px;
-    animation: scrollTrack 10s linear infinite;
-}
-
-
 
 .quiz-section {
     display: flex;
@@ -546,6 +545,7 @@ header {
 .footer {
     border-radius: 15px;
     background-color: #ffffff; 
+    width:100%;
     color: #505050; 
     padding: 40px 20px;
     display: flex;
@@ -555,38 +555,19 @@ header {
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Wrap on smaller screens */
+    justify-content: space-around;
     width: 100%;
     max-width: 1200px;
 }
 
-/* Footer About Section */
-.footer-about {
-    flex: 1;
-    margin: 20px;
-}
-
-.footer-about h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #505050; 
-}
-
-.footer-about p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #505050; 
-}
 
 
 .footer-links {
     flex: 1;
-    margin: 20px;
+    margin: 10px;
 }
 
 .footer-links h3 {
-
     font-size: 22px;
     margin-bottom: 10px;
     color: rgb(255, 195, 66); /* Coral color for heading */
@@ -614,7 +595,7 @@ header {
 /* Footer Contact Section */
 .footer-contact {
     flex: 1;
-    margin: 20px;
+    margin: 10px;
 }
 
 .footer-contact h3 {
@@ -630,7 +611,7 @@ header {
     margin-bottom: 8px;
 }
  .social-icons {
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .social-icons h2{
@@ -666,86 +647,4 @@ header {
     font-size: 14px;
     color: #505050; 
 }
-
-/* Health Cards Section */
-.health-section {
-    padding-bottom: 40px;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff; /* Background color */
-}
-
-.health-header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-    background-color: white;
-}
-
-.card-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.card-slider {
-    display: flex;
-    gap: 20px;
-    animation: scrollLeft 20s linear infinite /* Add animation */
-}
-
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.health-card {
-    background-color: #ffffff; /* Light background matching your theme */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden; /* Rounded corners */
-    transition: transform 0.3s ease;
-    width: 400px; /* Set width to 75px */
-    height: 350px; /* Set height to 75px */
-}
-
-.health-card:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Images inside cards */
-.health-image {
-    width: 100%; 
-    height: 175px; /* Set height to 75px */
-    object-fit: cover;
-    border-radius: 8px 8px 0 0; 
-}
-
-/* Card Content */
-.health-content {
-    padding: 10px;
-    text-align: center;
-}
-
-.health-content h3 {
-    font-size: 16px;
-    margin: 0 0 10px 0;
-    color: #505050; /* Text color */
-}
-
-.health-content p {
-    margin: 0;
-    font-size: 14px;
-    color: #505050; /* Text color */
-}
-
-
-
 
