@@ -102,21 +102,36 @@ h1 {
     text-align: center;
   }
   
-  .guide-member {
+  .team-lead {
     text-align: center;
     margin-bottom: 30px;
   }
-  .guide-member h3 {
+
+  .lead-details a{
+    color: #4a2d00;
+    padding: 10px;
+  }
+
+  .lead-details{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:15px;
+    align-items: center;
+    width:100%;
+  }
+
+  .team-lead h3 {
     font-size: 25px;
   }
-  .guide-member p {
+
+  .team-lead p {
     font-size: 23px;
     text-decoration: solid;
   }
   
-  .guide-pic {
+  .team-lead-pic {
     width: 250px;
-    height: 250px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 10px auto;
@@ -125,21 +140,18 @@ h1 {
   .team-members {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    
+    gap: 20px; 
   }
   
   .member {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 200px;
+    justify-content: space-around;
   }
   
   .profile-pic {
     width: 250px;
-    height: 250px;
-    padding-left: 200px;
+    border-radius: 50%;
   }
   
   .details {
@@ -159,7 +171,7 @@ h1 {
   }
   
   .member a {
-    color: #0077b5;  /* LinkedIn blue */
+    color: #4a2d00;  /* LinkedIn blue */
     text-decoration: none;
   }
   

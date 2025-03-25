@@ -26,7 +26,8 @@ header {
     align-items: center;
     color: rgb(51, 51, 51);
     z-index: 1;
-
+    animation: fadeInTop 1.5s ease-in-out forwards;
+    opacity: 0;
 }
 
 .header-container {
@@ -99,11 +100,6 @@ header {
     margin-right: 70px;
 }
 
-.login:hover {
-    background-color: #505050;
-    color: #ffffff;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -136,7 +132,10 @@ header {
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     body{
-        margin:0 ;
+        margin-top:0;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
         width:100%;
     }
     .Title h1 {
@@ -186,9 +185,16 @@ header {
     height: 800px;
     justify-content: space-between;
     align-items: center;
+    
 }
+.hero-image{
+    animation: fadeInLeft 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
 .homepage-image{
     margin-left: 30px;
+    
 }
 
 .hero-content{
@@ -198,6 +204,8 @@ header {
     margin-right:70px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    animation: fadeInBottom 1.5s ease-in-out forwards;
+    opacity: 0;
 }
 
 .hero-element-welcome ,.hero-elements,.hero-element {
@@ -242,7 +250,6 @@ header {
     .hero{
         margin-top: 170px;
         flex-direction: column;
-        gap:20px;
         width:400px;
         justify-items: center;
         align-items: center;
@@ -560,6 +567,13 @@ header {
     max-width: 1200px;
 }
 
+@media(max-width: 768px){
+    .footer-container{
+        flex-direction: column;
+        gap:10px;
+    }
+}
+
 
 
 .footer-links {
@@ -646,5 +660,52 @@ header {
 .footer-bottom p {
     font-size: 14px;
     color: #505050; 
+}
+
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 

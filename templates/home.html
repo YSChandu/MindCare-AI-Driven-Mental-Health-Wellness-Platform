@@ -420,6 +420,21 @@
                     }
                 });
             }
+
+
+            const elements = document.querySelectorAll(".fade-in");
+
+            function handleScroll() {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.8) {
+                        el.classList.add("show");
+                    }
+                });
+            }
+        
+            window.addEventListener("scroll", handleScroll);
+            handleScroll(); // Run once on page load
             
             //  Navigation Functions
             function navigateToPage(selector) {
