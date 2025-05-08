@@ -24,18 +24,18 @@
                 <div>
                     <nav class="navbar">
                         <ul>
-                            <li><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="{% url 'issues' %}">Mental Health Issues</a></li>
-                            <li><a href="resources">Well-being</a></li>
-                            <li><a href="schedules">Schedules</a></li>
-                            <li><a href="aboutus">Aboutus</a></li>
+                            <li><a  class="navbar_a" href="{% url 'home' %}">Home</a></li>
+                            <li><a  class="navbar_a" href="{% url 'issues' %}">Issues</a></li>
+                            <li><a class="navbar_a" href="resources" >Well-being</a></li>
+                            <li><a class="navbar_a" href="schedules">Schedules</a></li>
+                            <li><a class="navbar_a" href="aboutus">Aboutus</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div>
+                <div class="login">
                     {% if user.is_authenticated%}
                     <div id="hamburger_icon">
-                    <img class="hamburger_icon1" src="{% static 'm.jpg/hamburger_icon.jpeg'%}">
+                     <img class="hamburger_icon1" src="{% static 'm.jpg/hamburger_icon.jpeg'%}">
                     <div>
                     <div class="dropdown-content" id="dropdown">
                         <a href='profile'>My Profile</a>
@@ -43,9 +43,7 @@
                         <a href='logout'>Logout</a>
                     </div>
                     {%else%}
-                    <div class="login">
                     <a class="login-btn" href={% url 'login' %}>Login</a>
-                    <div>
                     {% endif%}
                 </div>
             </div>
@@ -408,17 +406,23 @@
             //  Dropdown Toggle
             const profileBtn = document.getElementById("hamburger_icon");
             const dropdown = document.getElementById("dropdown");
-        
+
             if (profileBtn && dropdown) {
+                console.log("Hamburger icon and dropdown found!");
+
                 profileBtn.addEventListener("click", function () {
+                    console.log("Hamburger icon clicked!");
                     dropdown.classList.toggle("show");
                 });
-        
+
                 window.addEventListener("click", function (event) {
                     if (!event.target.closest("#hamburger_icon")) {
+                        console.log("Clicked outside hamburger icon");
                         dropdown.classList.remove("show");
                     }
                 });
+            } else {
+                console.log("Hamburger icon or dropdown not found!");
             }
 
 

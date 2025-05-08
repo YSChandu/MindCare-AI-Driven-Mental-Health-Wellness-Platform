@@ -22,6 +22,7 @@ header {
     display: flex;
     position: fixed;
     width: 100%;
+    
     justify-content: space-between;
     align-items: center;
     color: rgb(51, 51, 51);
@@ -75,7 +76,6 @@ header {
 }
 
 .hamburger_icon1{
-    margin-top: 16px;
     height: 20px;
     cursor: pointer;
     opacity:0.5;
@@ -109,7 +109,7 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     min-width: 160px;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .dropdown-content a {
@@ -136,7 +136,8 @@ header {
         margin-bottom: 20px;
         margin-left: 10px;
         margin-right: 10px;
-        width:100%;
+        width:80vw;
+
     }
     .Title h1 {
         font-size: 34px;
@@ -158,18 +159,27 @@ header {
     .navbar ul {
         display: flex;
         list-style: none;
-        gap: 10px;
+        gap: 5px;
     }
-    .navbar ul li a {
-        color: rgb(51, 51, 51);
-        text-decoration: none;
-        font-size: 10px;
+    header .navbar ul li a {
+        font-size: 7px;
         padding: 5px;
     }
-    .login-btn{
-      margin-top: 16px;
-      margin-right:35px; 
+    .nav{
+       width:90%;
     }
+    .login{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .login-btn {
+        font-size: 10px;
+        padding: 5px;
+        margin-right:0;
+    }
+    
     .show {
         display: block;
         margin-right: 10px;
@@ -188,7 +198,7 @@ header {
     
 }
 .hero-image{
-    animation: fadeInLeft 1.5s ease-in-out forwards;
+    animation: fadeInTop 1.5s ease-in-out forwards;
     opacity: 0;
 }
 
@@ -204,7 +214,7 @@ header {
     margin-right:70px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    animation: fadeInBottom 1.5s ease-in-out forwards;
+    animation: fadeInTop 1.5s ease-in-out forwards;
     opacity: 0;
 }
 
@@ -250,23 +260,25 @@ header {
     .hero{
         margin-top: 170px;
         flex-direction: column;
-        width:400px;
+        width:80vw;
         justify-items: center;
         align-items: center;
     }
     .hero-content{
+        margin-left: 0px;
+        margin-right:0px;
         font-size: 10px;
     }
     .homepage-image{
         width:100%;
+        margin-left: 0px;
 
     }
     .hero-image{
         display:flex;
         justify-items: center;
         align-items: center;
-        width:100%;
-        margin-right: 30px;
+        margin-right: 0px;
     }
     .hero-content{
         margin-left: 0;
@@ -412,12 +424,6 @@ header {
     }
 
 }
-
-
-
-/* Section Headers styles */
-
-
 
 
 .mental-health-header,
@@ -661,6 +667,30 @@ header {
     font-size: 14px;
     color: #505050; 
 }
+@media(max-width: 768px){
+    .footer-bottom p {
+      font-size: 10px;
+      color: #505050; 
+    }
+    .footer-links h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: rgb(255, 195, 66); /* Coral color for heading */
+  }
+    .footer-contact h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: rgb(255, 195, 66) /* Coral color for heading */
+    }
+    .social-icons h2{
+      font-size: 15px;
+    }
+    .social-icons svg {
+      width: 20px;
+      height: 20px;
+      transition: fill 0.3s;
+  }
+  }
 
 
 @keyframes fadeInTop {

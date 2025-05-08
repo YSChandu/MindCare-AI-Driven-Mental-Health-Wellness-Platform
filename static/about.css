@@ -11,16 +11,15 @@ body {
 }
 header {
   color: #000000;
-  padding:20px;
+  padding:10px;
   text-align: center;
-  background-image: url('about.jpg');
   background-size: cover; /* Ensures the image covers the entire header */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; 
 }
 
 h1 {
-  background-color: transparent;
+   background-color: transparent;
     font-size: 60px;
     color: #000000;
     font-style: oblique;
@@ -35,7 +34,9 @@ h1 {
 
 .about-text p {
     font-size: 25px; 
+    padding: 10px;
     line-height: 1.6;
+    letter-spacing:2px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -56,7 +57,7 @@ h1 {
     color:#000000;
 }
   
-  .values-container {
+ .values-container {
     padding-top: 30px;
     display: flex;
     justify-content: space-around;
@@ -67,7 +68,7 @@ h1 {
   
   .value-item {
     width: 250px;
-    background-color: #4a2d00;
+    background-color:#e4e4e4;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,15 +84,15 @@ h1 {
   }
   
   .value-item h3 {
-    background-color: #4a2d00;
-    color: #ffffff;
+    background-color: #e4e4e4;
+    color: #505050;
     font-size: 22px;
     margin-bottom: 10px;
   }
   
   .value-item p {
-    background-color: #4a2d00;
-    color: #ffffff;
+    background-color: #e4e4e4;
+    color:#505050;
     font-size: 20px;
   }
   
