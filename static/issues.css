@@ -1,87 +1,69 @@
+/* Reset Styles */
 * {
-    background-color: rgb(255, 255, 255);
-}
-body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
     margin: 0;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Base Styles */
+body {
+    font-family: "Algerian";
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 100px;
+    background-color: #ffffff;
+}
+
+/* Header Styles */
 header {
-<<<<<<< HEAD
-    background-color: rgb(255, 255, 255);
-=======
-    background-color: rgb(255, 211, 115);
->>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
+    background-color: #4a3831;
     border-radius: 15px;
-    color: #000000;
+    color: white;
     padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
-header h1{
-<<<<<<< HEAD
-  background-color: rgb(255, 255, 255);
-=======
-  background-color: rgb(255, 211, 115);
->>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
+
+header h1, header p {
+    background-color: transparent;
 }
+
+/* Typography */
 h1 {
     font-size: 50px;
-    color: #000000;
-    font-style: oblique;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
 h2 {
     font-size: 35px;
-    color: #1d1d1d;
-    font-style : italic;
-    font-family : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    color: #4a3831;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid rgb(255, 195, 66);
 }
-h2:hover {
-    color: rgb(255, 149, 61);
-    text-decoration: underline;
-}
+
 h3 {
     font-size: 40px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:#000000;
     font-style: italic;
     text-align: center;
+    color: #4a3831;
+    padding-top:30px;
+    padding-bottom: 10px;
+    
+}
 
-}
-h3:hover{
-    color:rgb(255, 149, 61)
-}
 h4 {
     font-size: 20px;
+    color: #4a3831;
 }
-header p{
-<<<<<<< HEAD
-  background-color: rgb(255, 255, 255);
-=======
-  background-color: rgb(255, 211, 115);
->>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
 
-}
-p {
-    
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}                                                                                                                                                                                   .tagline {
-    font-size: 1.2em;
-    font-style: italic;
-    color: #000000;
-}
-.Types ul li {
-    font-style: italic;
-}
+/* List Styles */
 ul {
     padding-left: 20px;
 }
+
 ul li {
     margin-bottom: 10px;
     font-size: 1.3em;
@@ -89,19 +71,18 @@ ul li {
     list-style-type: none;
 }
 
-
+/* Resource Container */
 .resource-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 1200px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0 100px;
     text-align: center;
-  }
-  
-  .resource-box {
+}
+
+.resource-box {
     background-color: #ffffff;
     border-radius: 15px;
     padding: 20px;
@@ -109,174 +90,150 @@ ul li {
     flex-direction: column;
     transition: transform 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .resource-box img {
-    width: 100%;
-    height: 200px;
-    object-fit:cover;
-    border-radius: 12px;
-  }
-  
-  .resource-box h2 {
-    font-size: 24px;
-    color: #1c1c1c; /* Calm blue heading */
-    margin: 15px 0;
-  }
+    cursor: pointer;
+}
 
-  .resource-box:hover h2{
-    color:rgb(255, 149, 61)
-  }
-  
-  .resource-box p {
-    font-size: 16px;
-    color: #2d2d2d; /* Soft grey text for readability */
-    margin-bottom: 20px;
-  }
-  
-  .resource-box:hover {
+.resource-box:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .reference h2{
+.resource-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.resource-box h2 {
     font-size: 24px;
-    color: #000000;
-  }
-<<<<<<< HEAD
-  
-=======
->>>>>>> e8e40933d006962c75390cd0452f93afc3613b3f
- .reference ol li {
-    margin-bottom: 10px;
-    font-size: 1.3em;
-  }
-  .reference ol li :hover {
-    color: rgb(255, 149, 61);
-  }
+    color: #4a3831;
+    margin: 15px 0;
+    border-bottom: none;
+}
 
-  /* Footer Styles */
+.resource-box:hover h2 {
+    color: rgb(255, 195, 66);
+}
+
+.resource-box p {
+    font-size: 16px;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
 .footer {
-  margin-top: 50px;
-  border-radius: 15px;
-  background-color: #ffffff; 
-  color: #505050; 
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    border-radius: 15px;
+    background-color: #4a3831;
+    width: 100%;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
 }
 
-/* Footer About Section */
-.footer-about {
-  flex: 1;
-  margin: 20px;
+.footer-links, .footer-contact {
+    flex: 1;
+    margin: 10px;
 }
 
-.footer-about h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #505050; 
-}
-
-.footer-about p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #505050; 
-}
-
-
-.footer-links {
-  flex: 1;
-  margin: 20px;
-}
-
-.footer-links h3 {
-
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: rgb(255, 195, 66); /* Coral color for heading */
+.footer-links h3, .footer-contact h3, .social-icons h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: white;
+    padding-bottom: 10px;
 }
 
 .footer-links ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
-
 .footer-links ul li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    font-size: 1em;
 }
 
 .footer-links ul li a {
-  color: #505050; /* Light blue text */
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-  color: rgb(255, 195, 66); /* Coral color on hover */
-  text-decoration: underline;
-}
-
-/* Footer Contact Section */
-.footer-contact {
-  flex: 1;
-  margin: 20px;
-}
-
-.footer-contact h3 {
-
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: rgb(255, 195, 66) /* Coral color for heading */
+    color: rgb(255, 195, 66);
+    text-decoration: underline;
 }
 
 .footer-contact p {
-  font-size: 16px;
-  color: #505050;
-  margin-bottom: 8px;
-}
-.social-icons {
-  margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 8px;
 }
 
-.social-icons h2{
-  margin-top: 35px;
-  color: rgb(255, 195, 66);
+.social-icons {
+    margin: 10px;
 }
+
 .social-icons a {
-  margin-top: 20px;
-  color: #505050;
-  margin-right: 10px;
-  display: inline-block;
+    margin: 20px 10px 0 0;
+    color: white;
+    display: inline-block;
 }
 
 .social-icons svg {
-  width: 30px;
-  height: 30px;
-  transition: fill 0.3s;
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s;
 }
 
 .social-icons a:hover svg {
-  fill:  rgb(255, 195, 66);
+    fill: rgb(255, 195, 66);
 }
-/* Footer Bottom */
+
 .footer-bottom {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
-  font-size: 14px;
-  color: #505050; /* Light blue text */
+    color: white;
+    font-size: 14px;
 }
 
+/* Responsive Design */
+@media(max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-bottom p,
+    .footer-links h3,
+    .footer-contact h3,
+    .social-icons h2 {
+        font-size: 15px;
+    }
+    
+    .social-icons svg {
+        width: 20px;
+        height: 20px;
+    }
+}

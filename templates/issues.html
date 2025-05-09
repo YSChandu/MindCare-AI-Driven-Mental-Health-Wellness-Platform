@@ -8,11 +8,57 @@
     <title>Mental Health Issues</title>
 </head>
 <body>
+    <script>
+        function navigateToAnxiety() {
+            window.location.href = "{% url 'anxiety_issue' %}";
+        }
+        function navigateToMood() {
+            window.location.href = "{% url 'mood_issue' %}";
+        }
+        function navigateToOCD() {
+            window.location.href = "{% url 'OCD' %}";
+        }
+        function navigateToTrauma() {
+            window.location.href = "{% url 'trauma' %}";
+        }
+        function navigateToPersonality() {
+            window.location.href = "{% url 'personality_issue' %}";
+        }
+        function navigateToDissociative() {
+            window.location.href = "{% url 'dissociative' %}";
+        }
+        function navigateToEating() {
+            window.location.href = "{% url 'eating' %}";
+        }
+        function navigateToNeurodevelop() {
+            window.location.href = "{% url 'neurodevelop' %}";
+        }
+        function navigateToPsychotic() {
+            window.location.href = "{% url 'psychotic' %}";
+        }
+        function navigateToSomatic() {
+            window.location.href = "{% url 'somatic' %}";
+        }
+        function navigateToSleep() {
+            window.location.href = "{% url 'sleep_issue' %}";
+        }
+        function navigateToImpulse() {
+            window.location.href = "{% url 'impulse' %}";
+        }
+        function navigateToDrugs() {
+            window.location.href = "{% url 'drugs' %}";
+        }
+        function navigateToNeurocognit() {
+            window.location.href = "{% url 'neurocognit' %}";
+        }
+        function navigateToSelfHarm() {
+            window.location.href = "{% url 'self_harm' %}";
+        }
+    </script>
     <header>
         <h1>Mental Health Issues</h1>
         <p class="tagline">“It’s okay not to be okay, You'll heal.”</p>
     </header>
-    <hr>
     <section>
         <h2>Mental Health</h2>
         <p>Mental health plays a vital role in shaping our overall well-being, influencing how we think, 
@@ -76,11 +122,10 @@
     </section>
 
     <h3>Types of Disorders</h3>
-    <hr>
     <br>
     <div class="resource-container">
         <!-- Anxiety Disorders -->
-        <div onclick="navigateToAnxiety();" class="resource-box">
+        <div onclick="navigateToAnxiety()" class="resource-box">
             <img src="{% static 'm.jpg/anxiety.png' %}" alt="Anxiety Disorders">
             <h2>Anxiety Disorders</h2>
             <p>Anxiety disorders involve excessive fear or worry that interferes with daily life.</p>
@@ -107,7 +152,7 @@
             <p>These disorders develop after exposure to a traumatic or stressful event.</p>
         </div>
     
-        <!-- Personality Disorders -->
+        
         <div onclick="navigateToPersonality();" class="resource-box">
             <img src="{% static 'm.jpg/personality.png' %}" alt="Personality Disorders">
             <h2>Personality Disorders</h2>
@@ -128,7 +173,7 @@
             <p>These disorders are characterized by abnormal or disturbed eating habits that negatively affect health and well-being.</p>
         </div>
     
-        <!-- Neurodevelopmental Disorders -->
+        
         <div onclick="navigateToNeurodevelop();" class="resource-box">
             <img src="{% static 'm.jpg/neuro.png' %}" alt="Neurodevelopmental Disorders">
             <h2>Neurodevelopmental Disorders</h2>
@@ -238,53 +283,7 @@
         </div>
     </footer>
     
-    <script>
-        function navigateToAnxiety() {
-            window.location.href = "{% url 'anxiety_issue' %}";
-        }
-        function navigateToMood() {
-            window.location.href = "{% url 'mood_issue' %}";
-        }
-        function navigateToOCD() {
-            window.location.href = "{% url 'OCD' %}";
-        }
-        function navigateToTrauma() {
-            window.location.href = "{% url 'trauma' %}";
-        }
-        function navigateToPersonality() {
-            window.location.href = "{% url 'personality_issue' %}";
-        }
-        function navigateToDissociative() {
-            window.location.href = "{% url 'dissociative' %}";
-        }
-        function navigateToEating() {
-            window.location.href = "{% url 'eating' %}";
-        }
-        function navigateToNeurodevelop() {
-            window.location.href = "{% url 'neurodevelop' %}";
-        }
-        function navigateToPsychotic() {
-            window.location.href = "{% url 'psychotic' %}";
-        }
-        function navigateToSomatic() {
-            window.location.href = "{% url 'somatic' %}";
-        }
-        function navigateToSleep() {
-            window.location.href = "{% url 'sleep_issue' %}";
-        }
-        function navigateToImpulse() {
-            window.location.href = "{% url 'impulse' %}";
-        }
-        function navigateToDrugs() {
-            window.location.href = "{% url 'drugs' %}";
-        }
-        function navigateToNeurocognit() {
-            window.location.href = "{% url 'neurocognit' %}";
-        }
-        function navigateToSelfHarm() {
-            window.location.href = "{% url 'self_harm' %}";
-        }
-    </script>
     
-</body>  
-  
+    
+</body>
+</html>

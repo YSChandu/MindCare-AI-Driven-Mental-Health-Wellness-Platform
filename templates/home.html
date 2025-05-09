@@ -15,6 +15,102 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 <body>
+    <script>
+            function navigatetoissues(){
+                const loc ="{% url 'issues' %}";
+                window.location.href=loc;
+            }
+            function navigatetoselfcare(){
+                const loc ="{% url 'resources' %}";
+                window.location.href=loc;
+            }
+            function navigatetoyoga(){
+                const loc = "{% url 'yoga'%}";
+                window.location.href=loc;
+            };
+            function navigatetomusic(){
+                const loc = "{% url 'music' %}";
+                window.location.href=loc;
+            };
+            function navigatetomovies(){
+                const loc = "{% url 'movies'%}";
+                window.location.href=loc;
+            };
+            function navigatetoexercise(){
+                const loc = "{% url 'workout'%}";
+                window.location.href=loc;
+            };
+            function navigatetobreathing(){
+                const loc = "{% url 'breathing'%}";
+                window.location.href=loc;
+            };
+            function navigatetoselfhelpbooks(){
+                const loc = "{% url 'selfhelpbooks' %}";
+                window.location.href=loc;
+            };
+            function navigateToAnxiety() {
+            window.location.href = "{% url 'anxiety_issue' %}";
+            };
+            function navigateToMood() {
+                window.location.href = "{% url 'mood_issue' %}";
+            };
+            function navigateToOCD() {
+                window.location.href = "{% url 'OCD' %}";
+            };
+            function navigateToTrauma() {
+                window.location.href = "{% url 'trauma' %}";
+            };
+            function navigateToPersonality() {
+                window.location.href = "{% url 'personality_issue' %}";
+            }
+            function navigateToDissociative() {
+                window.location.href = "{% url 'dissociative' %}";
+            }
+            function navigateToEating() {
+                window.location.href = "{% url 'eating' %}";
+            }
+            function navigateToNeurodevelop() {
+                window.location.href = "{% url 'neurodevelop' %}";
+            }
+            function navigateToPsychotic() {
+                window.location.href = "{% url 'psychotic' %}";
+            }
+            function navigateToSomatic() {
+                window.location.href = "{% url 'somatic' %}";
+            }
+            function navigateToSleep() {
+                window.location.href = "{% url 'sleep_issue' %}";
+            }
+            function navigateToImpulse() {
+                window.location.href = "{% url 'impulse' %}";
+            }
+            function navigateToDrugs() {
+                window.location.href = "{% url 'drugs' %}";
+            }
+            function navigateToNeurocognit() {
+                window.location.href = "{% url 'neurocognit' %}";
+            }
+            function navigateToSelfHarm() {
+                window.location.href = "{% url 'self_harm' %}";
+            }
+            document.addEventListener("DOMContentLoaded", function () {
+                const profileBtn = document.getElementById("hamburger_icon");
+                const dropdown = document.getElementById("dropdown");
+                profileBtn.addEventListener("click", function () {
+                    console.log("Hamburger icon clicked!");
+                    dropdown.classList.toggle("show");
+                });
+
+                window.addEventListener("click", function (event) {
+                    if (!event.target.closest("#hamburger_icon")) {
+                        console.log("Clicked outside hamburger icon");
+                        dropdown.classList.remove("show");
+                    }
+                });
+        });
+
+        
+    </script>
     <header>
         <div class="header-container">
             <div class="Title">
@@ -153,7 +249,7 @@
             </div>
             <div class="card-slider">
                 <div class="card-carousel" id="hc">
-                    <div class="health-card health-card-1"  onclick="navigateToMood();">
+                    <div class="health-card health-card-1"  onclick="navigateToMood()">
                         <div>
                             <img src="{% static 'm.jpg/mood.png' %}" alt="Mood Disorders" class="health-image">
                         </div>
@@ -401,67 +497,6 @@
             <p>&copy; 2024 MindCare. All Rights Reserved.</p>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            //  Dropdown Toggle
-            const profileBtn = document.getElementById("hamburger_icon");
-            const dropdown = document.getElementById("dropdown");
-
-            if (profileBtn && dropdown) {
-                console.log("Hamburger icon and dropdown found!");
-
-                profileBtn.addEventListener("click", function () {
-                    console.log("Hamburger icon clicked!");
-                    dropdown.classList.toggle("show");
-                });
-
-                window.addEventListener("click", function (event) {
-                    if (!event.target.closest("#hamburger_icon")) {
-                        console.log("Clicked outside hamburger icon");
-                        dropdown.classList.remove("show");
-                    }
-                });
-            } else {
-                console.log("Hamburger icon or dropdown not found!");
-            }
-
-
-            const elements = document.querySelectorAll(".fade-in");
-
-            function handleScroll() {
-                elements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight * 0.8) {
-                        el.classList.add("show");
-                    }
-                });
-            }
-        
-            window.addEventListener("scroll", handleScroll);
-            handleScroll(); // Run once on page load
-            
-            //  Navigation Functions
-            function navigateToPage(selector) {
-                const loc = document.querySelector(`a[href*="${selector}"]`)?.href || "#";
-                window.location.href = loc;
-            }
-        
-            window.navigateToMood = () => navigateToPage("mood_issue");
-            window.navigateToOCD = () => navigateToPage("OCD");
-            window.navigateToTrauma = () => navigateToPage("trauma");
-            window.navigateToPersonality = () => navigateToPage("personality_issue");
-            window.navigateToDissociative = () => navigateToPage("dissociative");
-            window.navigatetoyoga = () => navigateToPage("yoga");
-            window.navigatetomusic = () => navigateToPage("music");
-            window.navigatetomovies = () => navigateToPage("movies");
-            window.navigatetoexercise = () => navigateToPage("workout");
-            window.navigatetobreathing = () => navigateToPage("breathing");
-            window.navigatetoselfhelpbooks = () => navigateToPage("selfhelpbooks");
-            window.navigatetoselfcare = () => (window.location.href = "resources");
-            window.navigatetoissues = () => navigateToPage("issues");
-        });
-
-        
-    </script>
+    
 </body>
 </html>

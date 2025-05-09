@@ -1,199 +1,206 @@
 * {
-    background-color: rgb(255, 255, 255);
-}
-body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.6;
     margin: 0;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #4a3831;
+    background-color: #faf7f5;
+    margin: 0;
+    padding: 0 5%;
+}
+
 .tagline {
     font-style: italic;
-    background-color: transparent;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
-header {
-    color: #000000;
-    padding:20px;
-    text-align: center;
 
-    background-image: url('disorder.jpg');
-    background-size: cover; /* Ensures the image covers the entire header */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; 
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #4a3831;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
-    background-color: transparent;
-    font-size: 50px;
-    color: #000000;
-    font-style: oblique;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
+
 h2 {
-    font-size: 40px;
-    color: #000000;
-    margin: 0;
-    font-style: italic;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: underline;
-}
-h2:hover {
-    color: rgb(69, 54, 164);
+    font-size: 2.2em;
+    color: #4a3831;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(255, 195, 66);
 }
 
 h3 {
-    font-size: 35px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.8em;
+    color: #4a3831;
+    margin: 25px 0 15px;
 }
+
 h4 {
-    font-size: 30px;
+    font-size: 1.4em;
+    color: #4a3831;
+    margin: 20px 0 10px;
 }
-h3:hover {
-    color: rgb(69, 54, 164);
-}
+
 ul {
     padding-left: 40px;
+    margin: 15px 0;
 }
-ul li {
-    margin-bottom: 10px;
-    font-size: 25px;
-}
-ul li a:hover {
-    color:rgb(69, 54, 164);
-} 
-p, ul {
-    font-size: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-  a {
-    color: #3379da
-  }
-  a:hover {
-    color :rgb(69, 54, 164);
-    text-decoration:underline;
-  }
 
-  /* Footer Styles */
+ul li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #4a3831;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #4a3831;
+    line-height: 1.8;
+}
+
+a {
+    color: rgb(255, 195, 66);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #4a3831;
+    text-decoration: underline;
+}
+
+/* Footer Styles */
 .footer {
-    border-radius: 15px;
-    background-color: #ffffff; 
-    color: #505050; 
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: #4a3831;
+    padding: 60px 0 20px;
+    margin-top: 50px;
+    color: white;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Wrap on smaller screens */
-    width: 100%;
+    flex-wrap: wrap;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Footer About Section */
-.footer-about {
+.footer-links, .footer-contact {
     flex: 1;
+    min-width: 250px;
     margin: 20px;
 }
 
-.footer-about h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #505050; 
-}
-
-.footer-about p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #505050; 
-}
-
-
-.footer-links {
-    flex: 1;
-    margin: 20px;
-}
-
-.footer-links h3 {
-
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: rgb(255, 195, 66); /* Coral color for heading */
+.footer-links h3, .footer-contact h3 {
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(255, 195, 66);
 }
 
 .footer-links ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 .footer-links ul li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .footer-links ul li a {
-    color: #505050; /* Light blue text */
-    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-    color: rgb(255, 195, 66); /* Coral color on hover */
-    text-decoration: underline;
-}
-
-/* Footer Contact Section */
-.footer-contact {
-    flex: 1;
-    margin: 20px;
-}
-
-.footer-contact h3 {
-
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: rgb(255, 195, 66) /* Coral color for heading */
+    color: rgb(255, 195, 66);
 }
 
 .footer-contact p {
-    font-size: 16px;
-    color: #505050;
-    margin-bottom: 8px;
-}
- .social-icons {
-    margin-top: 10px;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1em;
 }
 
-.social-icons h2{
-    margin-top: 35px;
-    color: rgb(255, 195, 66);
+.social-icons {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    text-align: center;
 }
+
+.social-icons h2 {
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
 .social-icons a {
-    margin-top: 20px;
-    color: #505050;
-    margin-right: 10px;
     display: inline-block;
+    margin: 0 10px;
+    color: white;
+    transition: all 0.3s ease;
 }
 
 .social-icons svg {
-    width: 30px;
-    height: 30px;
-    transition: fill 0.3s;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
 }
 
-.social-icons a:hover svg {
-    fill:  rgb(255, 195, 66);
+.social-icons a:hover {
+    color: rgb(255, 195, 66);
+    transform: translateY(-3px);
 }
-/* Footer Bottom */
+
 .footer-bottom {
-    width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
-    font-size: 14px;
-    color: #505050; /* Light blue text */
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    .footer-links, .footer-contact, .social-icons {
+        flex: 100%;
+        text-align: center;
+    }
 }
 

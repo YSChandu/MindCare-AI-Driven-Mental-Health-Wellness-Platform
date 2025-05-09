@@ -58,9 +58,7 @@ def ask_openai(message):
 
 @login_required
 def chatbot(request):
-    """
-    Handle chatbot interactions with chat history management
-    """
+    
     # Clear existing chat history on page refresh/load
     if request.method == 'GET':
         Chat.objects.filter(user=request.user).delete()
