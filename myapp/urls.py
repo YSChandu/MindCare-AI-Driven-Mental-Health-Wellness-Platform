@@ -33,7 +33,7 @@ urlpatterns=[
     path('breathing/',views.breathing,name='breathing'),
     path('workout/',views.exercise,name='workout'),
     path('selfhelpbooks/',views.selfhelpbooks,name='selfhelpbooks'),
-    path('schedules/',views.schedules,name='schedules')
+    path('schedules/',views.schedules,name='schedules'),
 ]
 
 
